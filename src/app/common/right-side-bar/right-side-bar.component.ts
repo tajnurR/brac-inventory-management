@@ -8,5 +8,6 @@ import {RouterLink, RouterModule} from '@angular/router';
   styleUrl: './right-side-bar.component.css'
 })
 export class RightSideBarComponent {
+  navActive: string = 'bg-gray-600';
 
 }
