@@ -1,0 +1,84 @@
+<main class="ml-64 mt-2 p-4">
+  <div class="text-black flex items-center space-x-2">
+    <button onclick="history.back()" class="flex items-center space-x-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+    <div>
+      <h1 class="text-xl font-medium">User Details</h1>
+    </div>
+
+  </div>
+  <div class="w-full mx-auto mt-10 shadow-lg rounded-lg overflow-hidden border-0">
+    <div class="p-4">
+      <div class="flex items-center mb-2">
+        <div class="pr-4">
+          <h2 class="text-xl font-semibold">Pranto Khan</h2>
+        </div>
+        <div>
+          <p class="bg-green-900 text-white pl-2 pr-2 pt-0.5 pb-0.5 rounded-sm">Active</p>
+        </div>
+      </div>
+      <p class="pt-0.5 text-blue-500">31614</p>
+
+      <div class="mt-4">
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold">Personal Information</h3>
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Email</p>
+            <p>prantokhancom</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Age</p>
+            <p>32</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Designation</p>
+            <p>SELP Officer</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Contact No.</p>
+            <p>013 6316 6161</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 my-4"></div>
+
+      <div class="mt-4">
+        <div class="mb-4">
+          <h3 class="text-lg font-semibold">Location Information</h3>
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Division Name</p>
+            <p>Dhaka</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">District Name</p>
+            <p>Dhaka</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Upazila Name</p>
+            <p>Dhaka</p>
+          </div>
+          <div class="p-2  rounded-lg">
+            <p class="font-medium">Branch Name</p>
+            <p>Pabna</p>
+          </div>
+          <div class="p-2 rounded-lg">
+            <div class="border-t border-gray-200 my-4 w-full"></div>
+            <div class="mt-2">
+              <p class="font-medium">Office Name</p>
+              <p>Gulshan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<router-outlet />
