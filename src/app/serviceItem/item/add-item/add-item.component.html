@@ -77,9 +77,15 @@
         <textarea id="remarks" class="mt-1 block p-4 w-full rounded-md border-gray-300 shadow-sm" rows="3" placeholder="Write comment about the item..."></textarea>
       </div>
       <div class="flex justify-end space-x-2 mt-4">
-        <button mat-raised-button color="warn" type="button">Cancel</button>
-        <button mat-raised-button type="submit">Submit</button>
+        <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 hover:cursor-pointer">
+          Cancel
+        </button>
+        <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 hover:cursor-pointer">
+          Submit
+        </button>
       </div>
+
     </form>
   </div>
 </main>
+<router-outlet />
