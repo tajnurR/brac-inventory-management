@@ -1,4 +1,4 @@
-import {Component, signal} from '@angular/core';
+import {Component, ElementRef, signal, ViewChild} from '@angular/core';
 import {RouterLink, RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class RightSideBarComponent {
   navActive: string = 'bg-gray-600';
+  isExpanded = true; // Default state
 
   isPinned = signal(true);
   isHovered = signal(false);
@@ -28,6 +29,7 @@ export class RightSideBarComponent {
 
   toggleSidebar() {
     this.isPinned.update((val) => !val);
+    this.isExpanded = !this.isExpanded;
   }
 
   onMouseEnter() {

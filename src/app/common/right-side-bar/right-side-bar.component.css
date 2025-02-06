@@ -1,6 +1,9 @@
 .material-icons {
   font-size: 24px;
 }
+#m-icon {
+  font-size: 38px;
+}
 
 aside {
   overflow: hidden;
