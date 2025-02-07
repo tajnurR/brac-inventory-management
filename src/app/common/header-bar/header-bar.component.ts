@@ -6,7 +6,7 @@ import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-header-bar',
-  imports: [MatIconModule, MatButtonModule, MatToolbarModule, RouterOutlet],
+  imports: [MatIconModule, MatButtonModule, MatToolbarModule],
   templateUrl: './header-bar.component.html',
   styleUrl: './header-bar.component.css'
 })
