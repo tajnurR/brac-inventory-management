@@ -21,6 +21,7 @@ export class RightSideBarComponent {
     { link: '/home', label: 'Dashboard', icon: 'home' },
     { link: '/order', label: 'Purchase Order', icon: 'shopping_cart' },
     { link: '/stock', label: 'Stock In', icon: 'inventory' },
+    { link: '/item-add', label: 'Item Add', icon: 'inventory' },
     { link: '/stock-out', label: 'Stock Out', icon: 'logout' },
     { link: '/history', label: 'Stock History', icon: 'history' },
     { link: '/setup', label: 'Master Setup', icon: 'settings' },
