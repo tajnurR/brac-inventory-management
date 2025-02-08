@@ -1,41 +1,34 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ItemData} from '../../domains/item-data';
-// import {MatIcon} from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
-
-/** Constants used to fill up our data base. */
-const ITEM_DATA: ItemData[] = Array.from({ length: 100 }, (_, i) => ({
-  sl: (i + 1).toString(),
-  item: `Item ${i + 1}`,
-  sku: `SKU-${1000 + i}`,
-  uom: ['pcs', 'kg', 'litre', 'box'][i % 4],
-  category: ['Electronics', 'Groceries', 'Clothing', 'Furniture'][i % 4],
-  specification: `Specification details for item ${i + 1}`,
-  created_on: new Date(2023, i % 12, (i % 28) + 1).toISOString(),
-}));
 
 @Component({
   selector: 'app-table-with-filter',
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, CommonModule],
   templateUrl: './table-with-filter.component.html',
   styleUrl: './table-with-filter.component.css'
 })
 export class TableWithFilterComponent {
-  displayedColumns: string[] = ['sl', 'item', 'sku', 'uom','category','specification','created_on'];
-  dataSource: MatTableDataSource<ItemData>;
+  @Input() columns: { key: string, label: string }[] = [];
+  @Input() data: ItemData[] = [];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
-    const users = ITEM_DATA
-      // console.table(users);
-    this.dataSource = new MatTableDataSource(users);
+  displayedColumns: string[] = [];
+  dataSource: MatTableDataSource<ItemData>;
+
+  constructor() {}
+
+  ngOnInit() {
+    this.displayedColumns = this.columns.map(col => col.key);
+    this.dataSource = new MatTableDataSource(this.data);
   }
 
   ngAfterViewInit() {
