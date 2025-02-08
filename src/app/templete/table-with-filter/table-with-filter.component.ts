@@ -5,7 +5,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ItemData} from '../../domains/item-data';
-import {NgClass} from '@angular/common';
+// import {MatIcon} from '@angular/material/icon';
+
 
 /** Constants used to fill up our data base. */
 const ITEM_DATA: ItemData[] = Array.from({ length: 100 }, (_, i) => ({
@@ -52,19 +53,3 @@ export class TableWithFilterComponent {
   }
 }
 
-/** Builds and returns a new User. */
-// function createNewUser(id: number): ItemData {
-//
-//
-//   return {
-//     sl: id.toString(),
-//     item: name,
-//     uom: name,
-//     sku: name,
-//     category: name,
-//     specification: name,
-//     created_on: name
-//     // created_on: Math.round(Math.random() * 100).toString(),
-//     // fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-//   };
-// }

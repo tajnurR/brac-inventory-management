@@ -1,3 +1,5 @@
 .bg-color-custom{
   background-color: rgba(242, 244, 247, 1);
+  height: fit-content;
+  padding-bottom: 5%;
 }
