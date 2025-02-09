@@ -5,11 +5,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButton} from '@angular/material/button';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-add-item',
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioGroup, MatRadioButton, RouterOutlet],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioGroup, MatRadioButton, RouterOutlet, RouterLink],
   templateUrl: './add-item.component.html',
   styleUrl: './add-item.component.css'
 })
