@@ -5,34 +5,41 @@
   [class.w-64]="isPinned() || isHovered()"
   [class.w-20]="!isPinned() && !isHovered()"
   class="h-screen bg-gray-900 text-white fixed transition-all duration-500 ease-in-out"
-    [ngClass]="{ 'w-64': isExpanded, 'w-20': !isExpanded }"
-  >
+  [ngClass]="{ 'w-64': isExpanded, 'w-20': !isExpanded }"
+>
   <!-- Sidebar Header -->
   <div class="flex items-center space-x-3 p-5">
-    <img src="assets/brac_logo.png" alt="Logo" class="w-8 h-8" >
+    <img src="assets/brac_logo.png" alt="Logo" class="w-8 h-8" />
     <span class="text-xl font-bold" *ngIf="isPinned() || isHovered()">Inventory</span>
   </div>
 
   <!-- Navigation Links -->
-  <nav class="mt-5 ">
+  <nav class="mt-5">
     <ul>
-      <li *ngFor="let item of navItems" class="mb-3 ">
+      <li *ngFor="let item of navItems" class="mb-3">
         <a
-          [routerLink]="item.link" [routerLinkActive]='navActive'
+          [routerLink]="item.link"
+          [routerLinkActive]="navActive"
           class="flex items-center p-2 rounded hover:bg-gray-800"
-          (click)="item.subItems && toggleStockInSubMenu()">
-          @if (isPinned() || isHovered()){
-            <span class="material-icons w-6 h-6" >{{ item.icon }}</span>
+          (click)="item.subItems && toggleSubMenu(item.link)"
+        >
+          @if (isPinned() || isHovered()) {
+            <span class="material-icons w-6 h-6">{{ item.icon }}</span>
           } @else {
-            <span class="material-icons w-6 h-6 pl-2 ">{{ item.icon }}</span>
+            <span class="material-icons w-6 h-6 pl-2">{{ item.icon }}</span>
           }
           <span class="ml-6 whitespace-nowrap" *ngIf="isPinned() || isHovered()">{{ item.label }}</span>
 
           @if (item.subItems && (isPinned() || isHovered())) {
-            <span class="material-icons ml-auto transition-transform duration-200" [ngClass]="{ 'rotate-90': isStockInExpanded }">chevron_right</span>
+            <span
+              class="material-icons ml-auto transition-transform duration-200"
+              [ngClass]="{ 'rotate-90': isItemExpanded(item.link) }"
+            >chevron_right</span
+            >
           }
         </a>
-        @if (item.subItems && isStockInExpanded && (isPinned() || isHovered())) {
+
+        @if (item.subItems && isItemExpanded(item.link) && (isPinned() || isHovered())) {
           <ul class="pl-8">
             <li *ngFor="let subItem of item.subItems" class="mb-2">
               <a
@@ -54,10 +61,16 @@
   <!-- Toggle Button -->
   <button
     (click)="toggleSidebar()"
-    class="absolute bottom-5 right-[8px] items-center justify-center w-12 h-12 mr-2 text-pink-100 transition-colors duration-150 bg-pink-700 rounded-full focus:shadow-outline hover:bg-pink-800">
-    <span class="material-icons" id="m-icon" [ngStyle]="{ 'transform': isPinned() ? 'rotate(180deg)' : 'rotate(0deg)' }">{{ 'keyboard_double_arrow_right' }}</span>
+    class="absolute bottom-5 right-[8px] items-center justify-center w-12 h-12 mr-2 text-pink-100 transition-colors duration-150 bg-pink-700 rounded-full focus:shadow-outline hover:bg-pink-800"
+  >
+    <span
+      class="material-icons"
+      id="m-icon"
+      [ngStyle]="{ transform: isPinned() ? 'rotate(180deg)' : 'rotate(0deg)' }"
+    >keyboard_double_arrow_right</span
+    >
   </button>
-  </aside>
+</aside>
 
 
 
