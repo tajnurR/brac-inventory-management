@@ -19,14 +19,34 @@
       <li *ngFor="let item of navItems" class="mb-3 ">
         <a
           [routerLink]="item.link" [routerLinkActive]='navActive'
-          class="flex items-center p-2 rounded hover:bg-gray-800">
+          class="flex items-center p-2 rounded hover:bg-gray-800"
+          (click)="item.subItems && toggleStockInSubMenu()">
           @if (isPinned() || isHovered()){
             <span class="material-icons w-6 h-6" >{{ item.icon }}</span>
           } @else {
             <span class="material-icons w-6 h-6 pl-2 ">{{ item.icon }}</span>
           }
           <span class="ml-6 whitespace-nowrap" *ngIf="isPinned() || isHovered()">{{ item.label }}</span>
+
+          @if (item.subItems && (isPinned() || isHovered())) {
+            <span class="material-icons ml-auto transition-transform duration-200" [ngClass]="{ 'rotate-90': isStockInExpanded }">chevron_right</span>
+          }
         </a>
+        @if (item.subItems && isStockInExpanded && (isPinned() || isHovered())) {
+          <ul class="pl-8">
+            <li *ngFor="let subItem of item.subItems" class="mb-2">
+              <a
+                [routerLink]="subItem.link"
+                [routerLinkActive]="navActive"
+                class="flex items-center p-2 rounded hover:bg-gray-800"
+              >
+                <span class="material-icons w-6 h-6">{{ subItem.icon }}</span>
+                <span class="ml-6 whitespace-nowrap">{{ subItem.label }}</span>
+              </a>
+            </li>
+          </ul>
+        }
+
       </li>
     </ul>
   </nav>

@@ -17,10 +17,21 @@ export class RightSideBarComponent {
   isPinned = signal(true);
   isHovered = signal(false);
 
+  isStockInExpanded = false;
+
   navItems = [
     { link: '/home', label: 'Dashboard', icon: 'home' },
     { link: '/order', label: 'Purchase Order', icon: 'shopping_cart' },
-    { link: '/stock', label: 'Stock In', icon: 'inventory' },
+    {
+      link: '/stock',
+      label: 'Stock In',
+      icon: 'inventory',
+      subItems: [
+        { link: '/stock/sub-item-1', label: 'Sub Item 1', icon: 'list' },
+        { link: '/stock/sub-item-2', label: 'Sub Item 2', icon: 'list' },
+        { link: '/stock/sub-item-3', label: 'Sub Item 3', icon: 'list' },
+      ],
+    },
     { link: '/item-add', label: 'Item Add', icon: 'inventory' },
     { link: '/stock-out', label: 'Stock Out', icon: 'logout' },
     { link: '/history', label: 'Stock History', icon: 'history' },
@@ -43,6 +54,10 @@ export class RightSideBarComponent {
     if (!this.isPinned()) {
       this.isHovered.set(false);
     }
+  }
+
+  toggleStockInSubMenu() {
+    this.isStockInExpanded = !this.isStockInExpanded;
   }
 
 }
