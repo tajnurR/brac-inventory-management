@@ -1,0 +1,97 @@
+<main class="">
+  <div class="p-6 bg-white shadow-lg rounded-lg">
+    <!-- Header with Back Button -->
+    <div class="flex items-center space-x-2 mb-5">
+      <button onclick="history.back()" class="flex items-center px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <h2 class="text-xl font-semibold">Add Category</h2>
+    </div>
+
+    <form class="space-y-5">
+      <!-- Grid Layout -->
+      <div class="grid grid-cols-2 gap-6 pl-20">
+        <!-- Item Name -->
+        <div>
+          <label for="itemName" class="input-level">Item Name</label>
+          <input id="itemName" type="text" class="input-field" placeholder="Type Item Name">
+        </div>
+
+        <!-- Specification -->
+        <div>
+          <label for="specification" class="input-level">Specification</label>
+          <input id="specification" type="text" class="input-field" placeholder="Type Specification">
+        </div>
+
+        <!-- Item Code -->
+        <div>
+          <label for="itemCode" class="input-level">Item Code</label>
+          <input id="itemCode" type="text" class="input-field" placeholder="Type Item Code">
+          <div class="mt-2 flex items-center space-x-2">
+
+            <label class="inline-flex items-center space-x-25 cursor-pointer">
+              <input type="checkbox" value="" class="sr-only peer">
+              <span class="ms-1 text-sm font-light text-gray-800">Want to Map with Master Item?</span>
+              <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+            </label>
+
+          </div>
+
+        </div>
+
+        <!-- UoM -->
+        <div>
+          <label for="uom" class="input-level">UoM</label>
+          <select id="uom" class="dropDown mt-2 w-full">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+
+        <!-- Supplier Name -->
+        <div>
+          <label for="supplierName" class="input-level">Supplier Name</label>
+          <select id="supplierName" class="dropDown mt-2 w-full">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+
+        <!-- Allow for Deviation Rate -->
+        <div>
+          <label class="input-level">Allow for Deviation Rate</label>
+          <div class="flex space-x-4 mt-2">
+            <div class="mt-2">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remarks -->
+        <div class="col-span-2">
+          <label for="remarks" class="input-level">Remarks</label>
+          <textarea id="remarks" class="remarks" rows="3" placeholder="Write comment about the item..."></textarea>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-end space-x-2">
+        <button routerLink="/setup/category-list" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+          Cancel
+        </button>
+        <button class="submitButton">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<router-outlet/>

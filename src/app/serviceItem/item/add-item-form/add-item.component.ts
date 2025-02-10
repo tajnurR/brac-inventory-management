@@ -8,7 +8,7 @@ import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
-  selector: 'app-add-item',
+  selector: 'app-add-item-form',
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioGroup, MatRadioButton, RouterOutlet, RouterLink],
   templateUrl: './add-item.component.html',
   styleUrl: './add-item.component.css'

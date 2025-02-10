@@ -1,0 +1,86 @@
+<main class="">
+  <div class="p-5 bg-white shadow-lg rounded-lg">
+    <!-- Back Button & Header -->
+    <div class="flex space-x-2 items-center mb-5">
+      <button onclick="history.back()" class="flex items-center px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <h2 class="text-xl font-semibold">Add Item</h2>
+    </div>
+
+    <form class="grid grid-cols-2 gap-6 pl-20">
+      <!-- Item Name -->
+      <div>
+        <label for="itemName" class="input-level">Item Name</label>
+        <input id="itemName" type="text" class="input-field w-full" placeholder="Type Item Name">
+      </div>
+
+      <!-- Item Group -->
+      <div>
+        <label for="itemGroup" class="input-level">Item Group</label>
+        <select id="itemGroup" class="dropDown w-full mt-2">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- Specification -->
+      <div>
+        <label for="specification" class="input-level">Specification</label>
+        <input id="specification" type="text" class="input-field w-full" placeholder="Type Specification">
+      </div>
+
+      <!-- UoM -->
+      <div>
+        <label for="uom" class="input-level">UoM</label>
+        <select id="uom" class="dropDown w-full mt-2">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- Master Item -->
+      <div>
+        <label for="masterItem" class="input-level">Master Item</label>
+        <select id="masterItem" class="dropDown w-full mt-2">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+
+      <!-- Allow for Deviation Rate -->
+      <div>
+        <label class="input-level">Allow for Deviation Rate</label>
+        <div class="mt-2">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <!-- Remarks (Full Width) -->
+      <div class="col-span-2">
+        <label for="remarks" class="input-level">Remarks</label>
+        <textarea id="remarks" class="remarks" rows="3" placeholder="Write comment about the item..."></textarea>
+      </div>
+    </form>
+
+    <!-- Buttons (Outside Grid) -->
+    <div class="flex justify-end space-x-2 mt-6">
+      <button routerLink="/item-list" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        Cancel
+      </button>
+      <button class="submitButton">
+        Submit
+      </button>
+    </div>
+
+  </div>
+</main>
+<router-outlet />

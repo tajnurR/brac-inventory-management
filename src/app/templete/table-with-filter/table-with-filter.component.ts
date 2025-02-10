@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
 })
 export class TableWithFilterComponent {
   @Input() columns: { key: string, label: string }[] = [];
-  @Input() data: ItemData[] = [];
+  @Input() data: any[] = [];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;

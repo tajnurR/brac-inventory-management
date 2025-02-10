@@ -10,7 +10,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   rounded-md
   py-2 px-3
   text-gray-700
-  focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+  focus:ring-2 focus:ring-gray-500 focus:border-b-gray-600
+  shadow-md
 }
 
 .input-level{
@@ -25,5 +26,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   block
   p-2
   w-90
-  h-12 rounded-md border-gray-300 shadow-sm
+  h-12 rounded-md border-gray-300 shadow-md
+  border-1
 }
+
+.page-header{
+  @apply
+  p-4 font-bold text-xl text-black
+}
+
+.remarks{
+  @apply
+  mt-2 block p-4 w-90 rounded-md border-gray-300 shadow-lg
+}
+
+.submitButton{
+  @apply
+  bg-black text-white px-4 py-2 rounded hover:bg-gray-600
+}
+
