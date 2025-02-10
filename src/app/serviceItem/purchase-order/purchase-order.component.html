@@ -1,4 +1,163 @@
-<main class="ml-64 mt-2 p-4">
-  <p>purchase-order works!ggggggggggggggggggggggggggggggggggggggggggggjggggggggggggggggggggg</p>
+<main class="ml-64 mt-2 p-4 bg-emerald-50">
+<!--  page header-->
+  <div>
+    <div class="p-2 bg-white shadow-md rounded-lg mb-4 ">
+      <div class="flex space-x-4 items-center mb-2 mt-2">
+        <div>
+          <button onclick="history.back()" class="flex items-center space-x-2 px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
+        <h2 class="text-xl font-medium">Transaction ID: <span class="text-xl font-bold">TRNI-132515</span></h2>
+        <button class="bg-green-900 text-white pl-2 pr-2 pt-0.5 pb-0.5 rounded-sm">Received</button>
+      </div>
+  </div>
+  </div>
+<!--  Basic Information-->
+  <div>
+    <div class="bg-white shadow-md rounded-lg p-4 mt-5 mb-5">
+      <h1 class="text-xl font-medium ">Basic Information</h1>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">PO No.</p>
+          <p>PO-125163</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Vendor Name</p>
+          <p>Khan ERP[1351]</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">PO Date</p>
+          <p>21-10-2023</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Purchase Method</p>
+          <p>Quotation Method</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Recommender</p>
+          <p>Khan Karim</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Advance Amount</p>
+          <p>100.00</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Remarks</p>
+          <p>______</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Status</p>
+          <p>Active</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Currency</p>
+          <p>BDT(1.0)</p>
+        </div>
+        <div class="p-2  rounded-lg">
+          <p class="font-medium text-gray-400">Approver</p>
+          <p>Malek [2610]</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!--  Item Details-->
+  <div>
+
+  </div>
+
+<!--  Work Order Delivery Schedule Details-->
+  <div class="bg-white shadow-md rounded-lg p-4 mt-5 mb-5">
+    <h1 class="text-xl font-medium mb-1">Work Order Delivery Schedule Details</h1>
+    <div>
+      <table mat-table [dataSource]="workOrderScheduleDetails" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="serialNo">
+          <th mat-header-cell *matHeaderCellDef> SL No. </th>
+          <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+        </ng-container>
+        <ng-container matColumnDef="lotNo">
+          <th mat-header-cell *matHeaderCellDef> Lot No. </th>
+          <td mat-cell *matCellDef="let element"> {{ element.lotNo }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef> Item </th>
+          <td mat-cell *matCellDef="let element"> {{ element.item }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="qty">
+          <th mat-header-cell *matHeaderCellDef> QTY </th>
+          <td mat-cell *matCellDef="let element"> {{ element.qty }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="deliveryDate">
+          <th mat-header-cell *matHeaderCellDef> Delivery Date </th>
+          <td mat-cell *matCellDef="let element"> {{ element.deliveryDate | date:'yyyy-MM-dd' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="deliveryLocation">
+          <th mat-header-cell *matHeaderCellDef> Delivery Location </th>
+          <td mat-cell *matCellDef="let element"> {{ element.deliveryLocation }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="receivedQty">
+          <th mat-header-cell *matHeaderCellDef>Received QTY </th>
+          <td mat-cell *matCellDef="let element"> {{ element.receivedQty }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="workOrderDisplayedColumns"  style="background-color: lightgrey; color: black;"></tr>
+        <tr mat-row *matRowDef="let row; columns: workOrderDisplayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+
+<!--  Approval History-->
+<div class="bg-white shadow-md rounded-lg p-4 mt-5 mb-5">
+  <h1 class="text-xl font-medium mb-2">Approval History</h1>
+  <div class="mb-2">
+    <table mat-table [dataSource]="approvalHistory" class="mat-elevation-z8">
+
+      <!-- Type Column -->
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type </th>
+        <td mat-cell *matCellDef="let element"> {{ element.type }} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+      </ng-container>
+
+      <!-- Action Taken By Column -->
+      <ng-container matColumnDef="actionTakenBy">
+        <th mat-header-cell *matHeaderCellDef> Action Taken By </th>
+        <td mat-cell *matCellDef="let element"> {{ element.actionTakenBy }} </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{ element.date | date:'yyyy-MM-dd' }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"  style="background-color: lightgrey; color: black;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
+<!--comments  -->
+<div class="rounded-2xl p-4 shadow-xl">
+  <h3>Comments</h3>
+  <h1>Items in storage were found to be [in good condition/damaged/outdated]</h1>
+</div>
 </main>
 <router-outlet/>
