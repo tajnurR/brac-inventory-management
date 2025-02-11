@@ -40,15 +40,16 @@ export class RightSideBarComponent {
     { link: '/setup', label: 'Master Setup', icon: 'settings',
       subItems: [
         { link: 'setup/category-list', label: 'Category', icon: 'inbox' },
-        { link: '/item-add', label: 'Item', icon: 'category' },
+        { link: 'setup/item-add', label: 'Item', icon: 'category' },
         { link: 'setup/item-group-list', label: 'Item Group', icon: 'list' },
         { link: 'setup/uom-list', label: 'UoM', icon: 'ac_unit' },
         { link: 'setup/organization-list', label: 'Organization', icon: 'corporate_fare' },
       ],},
     { link: '/uam', label: 'UAM', icon: 'group_add',
       subItems: [
+        { link: 'uam/role-uam-list', label: 'Role Management', icon: 'category' },
         { link: 'user-details', label: 'User Details', icon: 'person_raised_hand' },
-        // { link: '/item-add', label: 'Item', icon: 'category' },
+
         // { link: 'setup/item-group-list', label: 'Item Group', icon: 'list' },
         // { link: 'setup/uom-list', label: 'UoM', icon: 'ac_unit' },
         // { link: 'setup/organization-list', label: 'Organization', icon: 'corporate_fare' },

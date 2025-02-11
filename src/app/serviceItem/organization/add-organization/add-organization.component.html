@@ -1,5 +1,6 @@
-<main class="">
-  <div class="p-6 bg-white shadow-lg rounded-lg">
+<main class="p-4 sm:p-6">
+  <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+
     <!-- Header with Back Button -->
     <div class="flex items-center space-x-2 mb-5">
       <button onclick="history.back()" class="flex items-center px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
@@ -9,36 +10,40 @@
       </button>
       <h2 class="text-xl font-semibold">Add Organization</h2>
     </div>
-   <div>
-  <form class=" pl-95 ">
-    <div>
-      <label for="organizationName" class="input-level">Organization Name</label>
-      <input id="organizationName" type="text" class="input-field" placeholder="Type Organization Name">
-    </div>
-    <div>
-      <label for="address" class="input-level">Address</label>
-      <input id="address" type="text" class="input-field" placeholder="Type Address">
-    </div>
-    <div>
-      <label for="phoneNumber" class="input-level">Phone Number</label>
-      <input id="phoneNumber" type="text" class="input-field" placeholder="Type Phone Number">
-    </div>
 
-    <div>
-      <label for="contactNumber" class="input-level">Contact Number</label>
-      <input id="contactNumber" type="text" class="input-field" placeholder="Type Contact NumberI">
-    </div>
-    <!-- Buttons -->
-    <div class="flex justify-end space-x-2">
-      <button routerLink="/setup/organization-list" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-        Cancel
-      </button>
-      <button class="submitButton">
-        Submit
-      </button>
-    </div>
-  </form>
-   </div>
+    <!-- Form -->
+    <form class="space-y-5">
+      <div>
+        <label for="organizationName" class="input-level">Organization Name</label>
+        <input id="organizationName" type="text" class="input-field w-full" placeholder="Type Organization Name">
+      </div>
+
+      <div>
+        <label for="address" class="input-level">Address</label>
+        <input id="address" type="text" class="input-field w-full" placeholder="Type Address">
+      </div>
+
+      <div>
+        <label for="phoneNumber" class="input-level">Phone Number</label>
+        <input id="phoneNumber" type="text" class="input-field w-full" placeholder="Type Phone Number">
+      </div>
+
+      <div>
+        <label for="contactNumber" class="input-level">Contact Number</label>
+        <input id="contactNumber" type="text" class="input-field w-full" placeholder="Type Contact Number">
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-end space-x-2">
+        <button routerLink="/setup/organization-list" class="cancel-button">
+          Cancel
+        </button>
+        <button class="custom-button-global p-4">
+          Submit
+        </button>
+      </div>
+    </form>
   </div>
 </main>
+
 <router-outlet/>

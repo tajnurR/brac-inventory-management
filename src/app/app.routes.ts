@@ -13,6 +13,8 @@ import {ItemGroupListComponent} from './serviceItem/item-group/item-group-list/i
 import {AddItemGroupComponent} from './serviceItem/item-group/add-item-group/add-item-group.component';
 import {UomListComponent} from './serviceItem/uom/uom-list/uom-list.component';
 import {AddUomComponent} from './serviceItem/uom/add-uom/add-uom.component';
+import {RoleUAMListComponent} from './serviceItem/roleUAM/role-uam-list/role-uam-list.component';
+import {AddRoleComponent} from './serviceItem/roleUAM/add-role/add-role.component';
 
 
 export const routes: Routes = [
@@ -23,7 +25,7 @@ export const routes: Routes = [
     path: 'order', component: PurchaseOrderComponent,
   },
   {
-    path: 'item-add', component: ItemAddComponent,
+    path: 'setup/item-add', component: ItemAddComponent,
   },
   {
     path: 'home', component: HomeComponent,
@@ -60,5 +62,11 @@ export const routes: Routes = [
   },
   {
     path:'add-uom', component: AddUomComponent
+  },
+  {
+    path:'uam/role-uam-list', component: RoleUAMListComponent
+  },
+  {
+    path:'add-role', component: AddRoleComponent
   }
 ];

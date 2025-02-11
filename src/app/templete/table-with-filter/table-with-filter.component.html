@@ -1,5 +1,5 @@
 <div class="ml-3 mr-5 bg-white in-custom-main">
-  <div class="custom-input">
+  <div [hidden]="!searchBox" class="custom-input" >
     <input matInput class="custom-input-field" (keyup)="applyFilter($event)"  placeholder= " Search" #input>
   </div>
 

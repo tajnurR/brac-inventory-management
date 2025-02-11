@@ -1,10 +1,9 @@
-import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, input, Input, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ItemData} from '../../domains/item-data';
 import { CommonModule } from '@angular/common';
 
 
@@ -17,12 +16,13 @@ import { CommonModule } from '@angular/common';
 export class TableWithFilterComponent {
   @Input() columns: { key: string, label: string }[] = [];
   @Input() data: any[] = [];
+  @Input() searchBox: boolean = true;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   displayedColumns: string[] = [];
-  dataSource: MatTableDataSource<ItemData>;
+  dataSource: MatTableDataSource<any>;
 
   constructor() {}
 
@@ -37,6 +37,7 @@ export class TableWithFilterComponent {
   }
 
   applyFilter(event: Event) {
+    this.searchBox = true
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 

@@ -10,73 +10,80 @@
       <h2 class="text-xl font-semibold">Add Item</h2>
     </div>
 
-    <form class="grid grid-cols-2 gap-6 pl-20">
+    <form class="flex flex-col lg:flex-col lg:gap-6 pl-20">
       <!-- Item Name -->
-      <div>
-        <label for="itemName" class="input-level">Item Name</label>
-        <input id="itemName" type="text" class="input-field w-full" placeholder="Type Item Name">
-      </div>
+      <div class="lg:flex" >
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label for="itemName" class="input-level">Item Name</label>
+          <input id="itemName" type="text" class="input-field" placeholder="Type Item Name">
+        </div>
 
-      <!-- Item Group -->
-      <div>
-        <label for="itemGroup" class="input-level">Item Group</label>
-        <select id="itemGroup" class="dropDown w-full mt-2">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
+        <!-- Item Group -->
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label for="itemGroup" class="input-level">Item Group</label>
+          <select id="itemGroup" class="dropDown mt-3">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
       </div>
 
       <!-- Specification -->
-      <div>
-        <label for="specification" class="input-level">Specification</label>
-        <input id="specification" type="text" class="input-field w-full" placeholder="Type Specification">
-      </div>
+      <div class="lg:flex">
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label for="specification" class="input-level">Specification</label>
+          <input id="specification" type="text" class="input-field" placeholder="Type Specification">
+        </div>
 
-      <!-- UoM -->
-      <div>
-        <label for="uom" class="input-level">UoM</label>
-        <select id="uom" class="dropDown w-full mt-2">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
+        <!-- UoM -->
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label for="uom" class="input-level">UoM</label>
+          <select id="uom" class="dropDown mt-3">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
       </div>
 
       <!-- Master Item -->
-      <div>
-        <label for="masterItem" class="input-level">Master Item</label>
-        <select id="masterItem" class="dropDown w-full mt-2">
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
-        </select>
-      </div>
+      <div class="lg:flex">
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label for="masterItem" class="input-level">Master Item</label>
+          <select id="masterItem" class="dropDown mt-2">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
 
-      <!-- Allow for Deviation Rate -->
-      <div>
-        <label class="input-level">Allow for Deviation Rate</label>
-        <div class="mt-2">
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="1">Yes</mat-radio-button>
-            <mat-radio-button value="2">No</mat-radio-button>
-          </mat-radio-group>
+        <!-- Allow for Deviation Rate -->
+        <div class="mb-4 lg:mb-0 lg:w-1/2">
+          <label class="input-level">Allow for Deviation Rate</label>
+          <div class="mt-3">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Yes</mat-radio-button>
+              <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
         </div>
       </div>
 
       <!-- Remarks (Full Width) -->
-      <div class="col-span-2">
+      <div class="lg:col-span-2 lg:w-full">
         <label for="remarks" class="input-level">Remarks</label>
-        <textarea id="remarks" class="remarks" rows="3" placeholder="Write comment about the item..."></textarea>
+        <textarea id="remarks" class="remarks w-full" rows="3" placeholder="Write comment about the item..."></textarea>
       </div>
     </form>
 
+
     <!-- Buttons (Outside Grid) -->
     <div class="flex justify-end space-x-2 mt-6">
-      <button routerLink="/item-list" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+      <button routerLink="/setup/item-add" class="cancel-button">
         Cancel
       </button>
-      <button class="submitButton">
+      <button routerLink="/setup/item-add" class="custom-button-global p-4">
         Submit
       </button>
     </div>
