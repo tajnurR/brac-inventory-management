@@ -33,13 +33,13 @@
           @if (item.subItems && (isPinned() || isHovered())) {
             <span
               class="material-icons ml-auto transition-transform duration-200"
-              [ngClass]="{ 'rotate-90': isItemExpanded(item.link) }"
+              [ngClass]="{ 'rotate-90': isItemExpanded(item.subItems) }"
             >chevron_right</span
             >
           }
         </a>
 
-        @if (item.subItems && isItemExpanded(item.link) && (isPinned() || isHovered())) {
+        @if (item.subItems && isItemExpanded(item.subItems) && (isPinned() || isHovered())) {
           <ul class="pl-8">
             <li *ngFor="let subItem of item.subItems" class="mb-2">
               <a
