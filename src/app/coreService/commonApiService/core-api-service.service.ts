@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 // import {HttpClient} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
 import {NavModel} from '../../domains/nav-model';
+import {ItemAddComponent} from '../../serviceItem/item/item-add/item-add.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoreApiServiceService {
 
-  private apiUrl = 'https://your-api-endpoint.com/menus'; // Replace with actual API
+  // private apiUrl = 'https://your-api-endpoint.com/menus'; // Replace with actual API
 
   constructor() {}
 
@@ -41,7 +42,7 @@ export class CoreApiServiceService {
       {
         id: 3,
         label: "Stock In",
-        path: "/stock",
+        path: null,
         icon: "inventory",
         componentName: "inventory",
         parentMenuId: null,
@@ -76,15 +77,6 @@ export class CoreApiServiceService {
       },
       {
         id: 5,
-        label: "Item Add",
-        icon: "inventory",
-        path: "/item-add",
-        componentName: "ItemAddComponent",
-        parentMenuId: null,
-        status: true
-      },
-      {
-        id: 6,
         label: "Stock Out",
         icon: "logout",
         path: "/stock-out",
@@ -93,7 +85,7 @@ export class CoreApiServiceService {
         status: true
       },
       {
-        id: 7,
+        id: 6,
         label: "Stock History",
         icon: "history",
         path: "/history",
@@ -102,14 +94,89 @@ export class CoreApiServiceService {
         status: true
       },
       {
-        id: 8,
-        label: "Report Manager",
-        icon: "assessment",
-        path: "/reports",
+        id: 7,
+        label: "Master Setup",
+        icon: "settings",
+        path: "",
         componentName: "",
         parentMenuId: null,
         status: true
-      }
+      },
+      {
+        id: 8,
+        label: "Category",
+        icon: "inbox",
+        path: "setup/category-list",
+        componentName: "CategoryListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 9,
+        label: "Item",
+        icon: "category",
+        path: "/item-add",
+        componentName: "ItemAddComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 10,
+        label: "Item Group",
+        icon: "list",
+        path: "setup/item-group-list",
+        componentName: "ItemGroupListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 11,
+        label: "UoM",
+        icon: "ac_unit",
+        path: "setup/uom-list",
+        componentName: "UomListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 12,
+        label: "Organization",
+        icon: "corporate_fare",
+        path: "setup/organization-list",
+        componentName: "OrganizationListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 13,
+        label: "Organization",
+        icon: "corporate_fare",
+        path: "setup/organization-list",
+        componentName: "OrganizationListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 14,
+        label: "UAM",
+        icon: "group_add",
+        path: "/",
+        componentName: "",
+        parentMenuId: null,
+        status: true
+      },
+      {
+        id: 15,
+        label: "Report Manager",
+        icon: "assessment",
+        path: "/",
+        componentName: "",
+        parentMenuId: null,
+        status: true
+      },
+
+
+
     ];
 
     return new Observable(observer => {

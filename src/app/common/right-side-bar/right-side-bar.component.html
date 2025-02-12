@@ -30,7 +30,7 @@
           }
           <span class="ml-6 whitespace-nowrap" *ngIf="isPinned() || isHovered()">{{ item.label }}</span>
 
-          @if (item.subItems && (isPinned() || isHovered())) {
+          @if (item.subItems && item.subItems.length > 0 && (isPinned() || isHovered())) {
             <span
               class="material-icons ml-auto transition-transform duration-200"
               [ngClass]="{ 'rotate-90': isItemExpanded(item.subItems) }"
@@ -39,7 +39,7 @@
           }
         </a>
 
-        @if (item.subItems && isItemExpanded(item.subItems) && (isPinned() || isHovered())) {
+        @if (item.subItems && item.subItems.length > 0 && isItemExpanded(item) && (isPinned() || isHovered())) {
           <ul class="pl-8">
             <li *ngFor="let subItem of item.subItems" class="mb-2">
               <a
