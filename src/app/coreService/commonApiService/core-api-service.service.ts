@@ -43,7 +43,7 @@ export class CoreApiServiceService {
         id: 3,
         label: "Stock In",
         path: null,
-        icon: "inventory",
+        icon: "login",
         componentName: "inventory",
         parentMenuId: null,
         status: true
@@ -51,10 +51,10 @@ export class CoreApiServiceService {
 
       {
         id: 4,
-        label: "Sub Item 1",
-        path: "stock/sub-item-1",
+        label: "Stock In List",
+        path: "stock-list",
         icon: "list",
-        componentName: "",
+        componentName: "StockInListComponent",
         parentMenuId: 3,
         status: true
       },
@@ -90,7 +90,7 @@ export class CoreApiServiceService {
         label: "Stock History",
         icon: "history",
         path: "/history",
-        componentName: "",
+        componentName: "StockHistoryListComponent",
         parentMenuId: null,
         status: true
       },
@@ -165,7 +165,34 @@ export class CoreApiServiceService {
         componentName: "",
         parentMenuId: null,
         status: true
-      }
+      },
+      {
+        id: 16,
+        label: "Activity Log",
+        icon: "local_activity",
+        path: "activity-log",
+        componentName: "ActivityLogListComponent",
+        parentMenuId: null,
+        status: true
+      },
+      {
+        id: 17,
+        label: "Role Management",
+        icon: "manage_accounts",
+        path: "uam/role-uam-list",
+        componentName: "RoleUAMListComponent",
+        parentMenuId: 14,
+        status: true
+      },
+      {
+        id: 18,
+        label: "User Details",
+        icon: "person",
+        path: "user-details",
+        componentName: "UserDetailsComponent",
+        parentMenuId: 14,
+        status: true
+      },
     ];
 
     return new Observable(observer => {

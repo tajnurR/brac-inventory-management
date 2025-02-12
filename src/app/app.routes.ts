@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import {StockInComponent} from './serviceItem/stock-in/stock-in.component';
 import {PurchaseOrderComponent} from './serviceItem/purchase-order/purchase-order.component';
 import {HomeComponent} from './serviceItem/home/home.component';
 import {ItemAddComponent} from './serviceItem/item/item-add/item-add.component';
@@ -17,11 +16,16 @@ import {RoleUAMListComponent} from './serviceItem/roleUAM/role-uam-list/role-uam
 import {AddRoleComponent} from './serviceItem/roleUAM/add-role/add-role.component';
 import {StockHistoryListComponent} from './serviceItem/stock-history/stock-history-list/stock-history-list.component';
 import {ActivityLogListComponent} from './serviceItem/activity-log/activity-log-list/activity-log-list.component';
+import {StockInListComponent} from './serviceItem/stock-in/stock-in-list/stock-in-list.component';
+import {AddStockComponent} from './serviceItem/stock-in/add-stock/add-stock.component';
 
 
 export const routes: Routes = [
   {
-    path: 'stock', component: StockInComponent,
+    path: 'stock-list', component: StockInListComponent,
+  },
+  {
+    path: 'add-stock', component: AddStockComponent,
   },
   {
     path: 'order', component: PurchaseOrderComponent,
@@ -37,6 +41,9 @@ export const routes: Routes = [
   },
   {
     path: 'add-item-form', component: AddItemComponent
+  },
+  {
+    path: 'item-add', component: ItemAddComponent
   },
   {
     path: 'user-details', component: UserDetailsComponent
@@ -72,7 +79,7 @@ export const routes: Routes = [
     path:'add-role', component: AddRoleComponent
   },
   {
-    path:'stock-history-list', component: StockHistoryListComponent
+    path:'history', component: StockHistoryListComponent
   },
   {
     path:'activity-log', component: ActivityLogListComponent

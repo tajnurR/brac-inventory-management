@@ -1,0 +1,14 @@
+<div class="p-4 rounded shadow-md w-full bg-white">
+  <p class="text-lg font-semibold mb-2">Stock In Type:</p>
+
+  <mat-radio-group [(ngModel)]="pageToGo" (change)="handleAction($event.value)" class="grid grid-cols-3 gap-2 p-2">
+    <mat-radio-button value="1">PO Receive</mat-radio-button>
+    <mat-radio-button value="2">Receive with other Documents</mat-radio-button>
+    <mat-radio-button value="3">Gift</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<!-- Conditionally Load Component -->
+<div *ngIf="selectedComponent" class="w-full h-auto mt-4">
+  <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+</div>
