@@ -48,6 +48,7 @@ export class CoreApiServiceService {
         parentMenuId: null,
         status: true
       },
+
       {
         id: 4,
         label: "Sub Item 1",
@@ -97,7 +98,7 @@ export class CoreApiServiceService {
         id: 7,
         label: "Master Setup",
         icon: "settings",
-        path: "",
+        path: null,
         componentName: "",
         parentMenuId: null,
         status: true
@@ -148,19 +149,10 @@ export class CoreApiServiceService {
         status: true
       },
       {
-        id: 13,
-        label: "Organization",
-        icon: "corporate_fare",
-        path: "setup/organization-list",
-        componentName: "OrganizationListComponent",
-        parentMenuId: 7,
-        status: true
-      },
-      {
         id: 14,
         label: "UAM",
         icon: "group_add",
-        path: "/",
+        path: null,
         componentName: "",
         parentMenuId: null,
         status: true
@@ -169,14 +161,11 @@ export class CoreApiServiceService {
         id: 15,
         label: "Report Manager",
         icon: "assessment",
-        path: "/",
+        path: null,
         componentName: "",
         parentMenuId: null,
         status: true
-      },
-
-
-
+      }
     ];
 
     return new Observable(observer => {
@@ -191,6 +180,7 @@ export class CoreApiServiceService {
 
     menus.forEach(menu => {
       const mappedItem = {
+        id: menu.id,
         link: menu.path,
         label: menu.label,
         icon: menu.icon,
@@ -198,7 +188,6 @@ export class CoreApiServiceService {
       };
 
       menuMap.set(menu.id, mappedItem);
-
       if (menu.parentMenuId === null) {
         result.push(mappedItem);
       } else {

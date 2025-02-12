@@ -14,16 +14,12 @@ import {CoreApiServiceService} from '../../coreService/commonApiService/core-api
 export class RightSideBarComponent implements OnInit {
   navActive: string = 'bg-gray-600';
   isExpanded = true; // Default state
-
   isPinned = signal(true);
   isHovered = signal(false);
 
-  isStockInExpanded = false;
-
-  // Track the currently expanded menu item
-  expandedItem: string | null = null;
-
+  expandedIndex: number | null = null;
   navItems: any[] = [];
+
 
   constructor(private menuService: CoreApiServiceService) {}
 
@@ -32,13 +28,8 @@ export class RightSideBarComponent implements OnInit {
       this.navItems = items;
     });
     console.table(this.navItems);
-    for (const item of this.navItems) {
-      console.log("===> "+item.subItems);
-      console.log("++++> "+ (item.subItems.length > 0));
-    }
+
   }
-
-
 
   toggleSidebar() {
     this.isPinned.update((val) => !val);
@@ -58,18 +49,8 @@ export class RightSideBarComponent implements OnInit {
   }
 
 
+  toggleSubMenu(id: any) { debugger
+    this.expandedIndex = this.expandedIndex === id ? null : id;
 
-  // Toggle the expanded state of a menu item
-  toggleSubMenu(link: string) {
-    if (this.expandedItem === link) {
-      this.expandedItem = null; // Collapse if already expanded
-    } else {
-      this.expandedItem = link; // Expand the clicked item
-    }
-  }
-
-  // Check if a menu item is expanded
-  isItemExpanded(link: string): boolean {
-    return this.expandedItem === link;
   }
 }
