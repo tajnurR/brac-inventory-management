@@ -1,6 +1,7 @@
-import {Component, ElementRef, signal, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, signal, ViewChild} from '@angular/core';
 import {RouterLink, RouterModule} from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {CoreApiServiceService} from '../../coreService/commonApiService/core-api-service.service';
 
 
 @Component({
@@ -10,53 +11,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './right-side-bar.component.html',
   styleUrl: './right-side-bar.component.css'
 })
-export class RightSideBarComponent {
+export class RightSideBarComponent implements OnInit {
   navActive: string = 'bg-gray-600';
   isExpanded = true; // Default state
-
   isPinned = signal(true);
   isHovered = signal(false);
 
-  isStockInExpanded = false;
+  expandedIndex: number | null = null;
+  navItems: any[] = [];
 
-  // Track the currently expanded menu item
-  expandedItem: string | null = null;
 
-  navItems = [
-    { link: '/home', label: 'Dashboard', icon: 'home' },
-    { link: '/order', label: 'Purchase Order', icon: 'shopping_cart' },
-    {
-      link: '/stock',
-      label: 'Stock In',
-      icon: 'login',
-      subItems: [
-        { link: '/stock/sub-item-1', label: 'Sub Item 1', icon: 'list' },
-        { link: '/stock/sub-item-2', label: 'Sub Item 2', icon: 'list' },
-        { link: '/stock/sub-item-3', label: 'Sub Item 3', icon: 'list' },
-      ],
-    },
-    { link: '/stock-out', label: 'Stock Out', icon: 'logout' },
-    { link: '/stock-history-list', label: 'Stock History', icon: 'history' },
-    { link: '/setup', label: 'Master Setup', icon: 'settings',
-      subItems: [
-        { link: 'setup/category-list', label: 'Category', icon: 'inbox' },
-        { link: 'setup/item-add', label: 'Item', icon: 'category' },
-        { link: 'setup/item-group-list', label: 'Item Group', icon: 'list' },
-        { link: 'setup/uom-list', label: 'UoM', icon: 'ac_unit' },
-        { link: 'setup/organization-list', label: 'Organization', icon: 'corporate_fare' },
-      ],},
-    { link: '/uam', label: 'UAM', icon: 'group_add',
-      subItems: [
-        { link: 'uam/role-uam-list', label: 'Role Management', icon: 'category' },
-        { link: 'user-details', label: 'User Details', icon: 'person_raised_hand' },
+  constructor(private menuService: CoreApiServiceService) {}
 
-        // { link: 'setup/item-group-list', label: 'Item Group', icon: 'list' },
-        // { link: 'setup/uom-list', label: 'UoM', icon: 'ac_unit' },
-        // { link: 'setup/organization-list', label: 'Organization', icon: 'corporate_fare' },
-      ],},
-    { link: '/reports', label: 'Report Manager', icon: 'assessment' },
-    { link: '/activity-log', label: 'Activity Log', icon: 'schedule' },
-  ];
+  ngOnInit(): void {
+    this.menuService.getMenuItems().subscribe(items => {
+      this.navItems = items;
+    });
+    console.table(this.navItems);
+
+  }
 
   toggleSidebar() {
     this.isPinned.update((val) => !val);
@@ -75,17 +48,9 @@ export class RightSideBarComponent {
     }
   }
 
-  // Toggle the expanded state of a menu item
-  toggleSubMenu(link: string) {
-    if (this.expandedItem === link) {
-      this.expandedItem = null; // Collapse if already expanded
-    } else {
-      this.expandedItem = link; // Expand the clicked item
-    }
-  }
 
-  // Check if a menu item is expanded
-  isItemExpanded(link: string): boolean {
-    return this.expandedItem === link;
+  toggleSubMenu(id: any) { debugger
+    this.expandedIndex = this.expandedIndex === id ? null : id;
+
   }
 }
