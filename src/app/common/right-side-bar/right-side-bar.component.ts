@@ -36,7 +36,7 @@ export class RightSideBarComponent {
       ],
     },
     { link: '/stock-out', label: 'Stock Out', icon: 'logout' },
-    { link: '/history', label: 'Stock History', icon: 'history' },
+    { link: '/stock-history-list', label: 'Stock History', icon: 'history' },
     { link: '/setup', label: 'Master Setup', icon: 'settings',
       subItems: [
         { link: 'setup/category-list', label: 'Category', icon: 'inbox' },
@@ -55,6 +55,7 @@ export class RightSideBarComponent {
         // { link: 'setup/organization-list', label: 'Organization', icon: 'corporate_fare' },
       ],},
     { link: '/reports', label: 'Report Manager', icon: 'assessment' },
+    { link: '/activity-log', label: 'Activity Log', icon: 'schedule' },
   ];
 
   toggleSidebar() {

@@ -15,6 +15,8 @@ import {UomListComponent} from './serviceItem/uom/uom-list/uom-list.component';
 import {AddUomComponent} from './serviceItem/uom/add-uom/add-uom.component';
 import {RoleUAMListComponent} from './serviceItem/roleUAM/role-uam-list/role-uam-list.component';
 import {AddRoleComponent} from './serviceItem/roleUAM/add-role/add-role.component';
+import {StockHistoryListComponent} from './serviceItem/stock-history/stock-history-list/stock-history-list.component';
+import {ActivityLogListComponent} from './serviceItem/activity-log/activity-log-list/activity-log-list.component';
 
 
 export const routes: Routes = [
@@ -68,5 +70,11 @@ export const routes: Routes = [
   },
   {
     path:'add-role', component: AddRoleComponent
+  },
+  {
+    path:'stock-history-list', component: StockHistoryListComponent
+  },
+  {
+    path:'activity-log', component: ActivityLogListComponent
   }
 ];

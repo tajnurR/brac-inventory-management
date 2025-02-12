@@ -1,0 +1,61 @@
+<div>
+
+  <div class="flex justify-between p-6 items-center">
+    <h1 class="text-xl" >Notification</h1>
+    <button class="custom-button-global p-4">Mark All As Read</button>
+  </div>
+
+  <div class="flex justify-between items-center pl-6 pr-6" >
+
+    <button class="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-20 border-gray-400 rounded shadow">
+      All
+    </button>
+
+    <button class="bg-white hover:bg-gray-100 text-gray-800 font-medium py-2 px-18  border-gray-400 rounded shadow">
+      Unread (<span>1</span>)
+    </button>
+
+  </div>
+
+<!--  Notification Card-->
+
+  <div class="max-w-md mx-auto p-6">
+    <!-- Date -->
+    <p class="text-gray-500 text-sm">Today</p>
+
+    <!-- Main Content -->
+    <div class="flex items-start space-x-3 mt-2">
+      <!-- Icon -->
+      <div class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded p-2 relative">
+        <!-- Active dot -->
+        <span class="absolute top-0 right-0 block w-2 h-2 bg-green-500 rounded-full border-2 border-white"></span>
+
+        <!-- SVG Icon -->
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 9l-5 5m0 0l5 5m-5-5h12"></path>
+        </svg>
+      </div>
+
+
+      <!-- Text Content -->
+      <div>
+        <p class="font-semibold text-gray-900">Sent back from RM</p>
+        <p class="text-gray-600 text-sm mt-2 mb-2">
+          Branch <span class="font-medium">[1488]</span> Shyamnagar, Member <span class="font-medium">[20126]</span>
+          Sharmin has applied for a loan of TK 400,000
+        </p>
+
+        <!-- Timestamp -->
+        <div class="flex items-center text-gray-400 text-xs mt-2">
+          <span>Today</span>
+          <span class="mx-1">•</span>
+          <span>9:45 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
