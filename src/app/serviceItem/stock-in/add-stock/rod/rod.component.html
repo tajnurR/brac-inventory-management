@@ -1,7 +1,7 @@
 <div class="mx-auto p-6 bg-white shadow-md rounded-lg">
   <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
 
-  <div class="flex justify-start space-x-6 items-start">
+  <div class="flex justify-start space-x-10 items-start">
     <!-- Challan No. and Challan Date -->
     <div>
       <label class="input-level">Challan No.</label>
@@ -9,42 +9,48 @@
     </div>
 
     <div>
-      <label class="input-level">Challan Date.</label>
-      <mat-form-field class="">
+      <label class="input-level mb-3">Challan Date.</label>
+      <mat-form-field class=" w-[120%] h-17">
         <mat-label>Select a date</mat-label>
-        <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <input matInput [matDatepicker]="picker">
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+    </div>
+    <div>
     </div>
     <!-- Vendor Name -->
     <div>
       <label class="input-level">Vendor Name</label>
       <select class="input-field">
         <option>Select Vendor</option>
+        <option>Select Vendor2</option>
+        <option>Select Vendor3</option>
         <!-- Add more options dynamically -->
       </select>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+  <div class="flex space-x-10">
     <!-- Received By -->
     <div>
       <label class="input-level">Received By</label>
       <select class="input-field">
         <option>Select Receiver</option>
+        <option>Select Receiver2</option>
+        <option>Select Receiver3</option>
         <!-- Add more options dynamically -->
       </select>
     </div>
     <!-- Received Date -->
     <div>
       <div>
-        <label class="input-level">Received Date.</label>
-        <mat-form-field class="">
-          <mat-label>Select a date</mat-label>
-          <input matInput [matDatepicker]="picker" class="">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+        <label class="input-level mb-3">Received Date.</label>
+        <mat-form-field class=" w-[120%] h-17">
+          <mat-label class="">Select a date</mat-label>
+          <input matInput [matDatepicker]="picker2" class="">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
       </div>
     </div>

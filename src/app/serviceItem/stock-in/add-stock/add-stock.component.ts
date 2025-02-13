@@ -4,7 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {NgComponentOutlet, NgIf} from '@angular/common';
 import {AddRoleComponent} from '../../roleUAM/add-role/add-role.component';
 import {UomListComponent} from '../../uom/uom-list/uom-list.component';
-import {RodComponent} from '../rod/rod.component';
+import {RodComponent} from './rod/rod.component';
+import {GiftComponent} from './gift/gift.component';
+import {PoReceiveComponent} from './po-receive/po-receive.component';
 
 @Component({
   selector: 'app-add-stock',
@@ -20,7 +22,7 @@ import {RodComponent} from '../rod/rod.component';
 })
 export class AddStockComponent {
   pageToGo: string = '1';
-  selectedComponent: any = AddRoleComponent;
+  selectedComponent: any = PoReceiveComponent;
 
   handleAction(selectedValue: string) {
     this.pageToGo = selectedValue;
@@ -29,9 +31,9 @@ export class AddStockComponent {
       // receive with other documents
       this.selectedComponent = RodComponent;
     } else if (selectedValue === '3') {
-      this.selectedComponent = UomListComponent;
+      this.selectedComponent = GiftComponent;
     } else if (selectedValue === '1') {
-      this.selectedComponent = AddRoleComponent;
+      this.selectedComponent = PoReceiveComponent;
     }
   }
 }

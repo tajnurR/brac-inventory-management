@@ -3,15 +3,16 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 
 @Component({
-  selector: 'app-rod',
+  selector: 'app-po-receive',
   providers: [provideNativeDateAdapter()],
-  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule],
+  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatRadioGroup, MatRadioButton],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './rod.component.html',
-  styleUrl: './rod.component.css'
+  templateUrl: './po-receive.component.html',
+  styleUrl: './po-receive.component.css'
 })
-export class RodComponent {
+export class PoReceiveComponent {
 
 }

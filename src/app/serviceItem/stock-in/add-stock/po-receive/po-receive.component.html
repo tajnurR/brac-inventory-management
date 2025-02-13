@@ -1,0 +1,71 @@
+<div class="mx-auto p-6 bg-white shadow-md rounded-lg">
+  <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
+
+  <!-- Using Grid Layout -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- PO No. -->
+    <div>
+      <label class="input-level">PO No.</label>
+      <select class="input-field">
+        <option>Select Vendor</option>
+        <option>Select Vendor2</option>
+        <option>Select Vendor3</option>
+        <!-- Add more options dynamically -->
+      </select>
+    </div>
+
+    <!-- Receive Date -->
+    <div>
+      <label class="input-level mb-3">Receive Date</label>
+      <mat-form-field class="w-[320px] h-17">
+        <mat-label>Select a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <!-- Received By -->
+    <div>
+      <label class="input-level">Received By</label>
+      <select class="input-field">
+        <option>Select Receiver</option>
+        <option>Select Receiver2</option>
+        <option>Select Receiver3</option>
+        <!-- Add more options dynamically -->
+      </select>
+    </div>
+
+    <!-- Vendor Name -->
+    <div>
+      <label class="input-level">Vendor Name</label>
+      <input type="text" placeholder="Type Vendor Name" class="input-field">
+    </div>
+
+    <!-- Challan No. Mushok -->
+    <div>
+      <label class="input-level">Challan No. Mushok</label>
+      <input type="text" placeholder="Type Mushok Name" class="input-field">
+    </div>
+
+    <!-- Second Receive Date -->
+    <div>
+      <label class="input-level mb-3">Receive Date (Second)</label>
+      <mat-form-field class="w-[320px] h-17">
+        <mat-label>Select a date</mat-label>
+        <input matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  </div>
+  <div>
+    <h1>Select Stock in Type</h1>
+    <mat-radio-group class="flex items-center space-x-2">
+      <mat-radio-button value="1">Receive without QC</mat-radio-button>
+      <mat-radio-button value="2">Receive with QC</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="mx-auto p-6 bg-white shadow-md rounded-lg">
+  <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
+
+  <div class="flex justify-start space-x-6 items-start">
+    <!-- Vendor Name -->
+    <div>
+      <label class="input-level">Organization Name</label>
+      <select class="input-field">
+        <option>Select Vendor</option>
+        <option>WHO</option>
+        <option>UNSCO</option>
+        <!-- Add more options dynamically -->
+      </select>
+    </div>
+    <!-- Received By -->
+    <div>
+      <label class="input-level">Receiver</label>
+      <select class="input-field">
+        <option>Select Receiver</option>
+        <option>Select Receiver2</option>
+        <option>Select Receiver3</option>
+        <!-- Add more options dynamically -->
+      </select>
+    </div>
+    <div>
+      <label class="input-level mb-3">Receive Date.</label>
+      <mat-form-field class=" w-[125%] h-17">
+        <mat-label>Select a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>
