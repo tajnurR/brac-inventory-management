@@ -37,4 +37,16 @@ export class AddStockComponent {
       this.selectedComponent = PoReceiveComponent;
     }
   }
+
+  files: File[] = []; // Array to store all selected files
+
+  // Method to handle file selection
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      // Append new files to the existing `files` array
+      this.files = [...this.files, ...Array.from(input.files)];
+      console.log('All Files:', this.files); // Debugging
+    }
+  }
 }

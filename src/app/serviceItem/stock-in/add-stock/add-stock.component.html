@@ -25,7 +25,12 @@
       </label>
     </div>
     <div>
-      <input id="dropzone-file" class="p-2 m-2" type="file"/>
+      <input id="dropzone-file" class="p-2 m-2" hidden="hidden" type="file" multiple (change)="onFileSelected($event)"/>
+    </div>
+    <div class="m-2">
+      <div *ngFor="let file of files" class="text-gray-700">
+        {{ file.name }}
+      </div>
     </div>
   </div>
   <!-- Remarks -->
