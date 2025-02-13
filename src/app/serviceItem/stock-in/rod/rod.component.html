@@ -1,40 +1,52 @@
 <div class="mx-auto p-6 bg-white shadow-md rounded-lg">
   <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="flex justify-start space-x-6 items-start">
     <!-- Challan No. and Challan Date -->
     <div>
-      <label class="block text-sm font-medium text-gray-700">Challan No.</label>
-      <input type="text" placeholder="Type Challan Number" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      <label class="input-level">Challan No.</label>
+      <input type="text" placeholder="Type Challan Number" class="input-field">
     </div>
-    <div>
-      <label class="block text-sm font-medium text-gray-700">Challan Date</label>
-      <input type="date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-    </div>
-  </div>
 
-  <!-- Vendor Name -->
-  <div class="mt-6">
-    <label class="block text-sm font-medium text-gray-700">Vendor Name</label>
-    <select class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
-      <option>Select Vendor</option>
-      <!-- Add more options dynamically -->
-    </select>
+    <div>
+      <label class="input-level">Challan Date.</label>
+      <mat-form-field class="">
+        <mat-label>Select a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <!-- Vendor Name -->
+    <div>
+      <label class="input-level">Vendor Name</label>
+      <select class="input-field">
+        <option>Select Vendor</option>
+        <!-- Add more options dynamically -->
+      </select>
+    </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
     <!-- Received By -->
     <div>
-      <label class="block text-sm font-medium text-gray-700">Received By</label>
-      <select class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      <label class="input-level">Received By</label>
+      <select class="input-field">
         <option>Select Receiver</option>
         <!-- Add more options dynamically -->
       </select>
     </div>
     <!-- Received Date -->
     <div>
-      <label class="block text-sm font-medium text-gray-700">Received Date</label>
-      <input type="date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+      <div>
+        <label class="input-level">Received Date.</label>
+        <mat-form-field class="">
+          <mat-label>Select a date</mat-label>
+          <input matInput [matDatepicker]="picker" class="">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 </div>
