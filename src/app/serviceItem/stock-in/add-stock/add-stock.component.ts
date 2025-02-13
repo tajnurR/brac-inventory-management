@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
-import {NgComponentOutlet, NgIf} from '@angular/common';
+import {NgComponentOutlet, NgForOf, NgIf} from '@angular/common';
 import {AddRoleComponent} from '../../roleUAM/add-role/add-role.component';
 import {UomListComponent} from '../../uom/uom-list/uom-list.component';
 import {RodComponent} from './rod/rod.component';
@@ -16,7 +16,8 @@ import {PoReceiveComponent} from './po-receive/po-receive.component';
     MatRadioButton,
     FormsModule,
     NgComponentOutlet,
-    NgIf
+    NgIf,
+    NgForOf
   ],
   styleUrls: ['./add-stock.component.css']
 })
