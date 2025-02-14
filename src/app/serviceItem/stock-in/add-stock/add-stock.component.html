@@ -28,13 +28,18 @@
       <input id="dropzone-file" class="p-2 m-2" hidden="hidden" type="file" multiple (change)="onFileSelected($event)"/>
     </div>
     <div class="m-2">
-      <div *ngFor="let file of files; let i = index" class="text-gray-700 border-2 rounded w-40 flex justify-between items-center p-2 mb-2">
-        <span>{{ file.name }}</span>
+      <div *ngFor="let file of files; let i = index"
+           class="text-gray-700 border-2 rounded flex justify-between items-center p-2 mb-2"
+           [ngStyle]="{'width': file.name.length * 10 + 'px'}">
+
+        <span class="truncate">{{ file.name }}</span>
+
         <button (click)="removeFile(i)" class="text-black text-xl hover:text-red-700 cursor-pointer">
           ×
         </button>
       </div>
     </div>
+
   </div>
   <!-- Remarks -->
   <div class="flex sm:flex-row sm:space-x-6 lg:space-x-6 mt-4 ml-2">

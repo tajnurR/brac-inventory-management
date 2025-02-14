@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {FormsModule} from '@angular/forms';
-import {NgComponentOutlet, NgForOf, NgIf} from '@angular/common';
+import {NgComponentOutlet, NgForOf, NgIf, NgStyle} from '@angular/common';
 import {RodComponent} from './rod/rod.component';
 import {GiftComponent} from './gift/gift.component';
 import {PoReceiveComponent} from './po-receive/po-receive.component';
@@ -15,23 +15,18 @@ import {PoReceiveComponent} from './po-receive/po-receive.component';
     FormsModule,
     NgComponentOutlet,
     NgIf,
-    NgForOf
+    NgForOf,
+    NgStyle
   ],
   styleUrls: ['./add-stock.component.css']
 })
 export class AddStockComponent {
-
-  files: File[] = [];
   pageToGo: string = '1';
-  selectedComponent: any = PoReceiveComponent; // Set default component
-
-  ngOnInit() {
-    this.handleAction(this.pageToGo); // Ensure '1' is selected on load
-  }
+  selectedComponent: any = PoReceiveComponent;
 
   handleAction(selectedValue: string) {
     this.pageToGo = selectedValue;
-    this.files = []; // Clear files when switching components
+    this.files = []; // Clear files for every component change
 
     const componentMap = {
       '1': PoReceiveComponent,
@@ -41,6 +36,8 @@ export class AddStockComponent {
 
     this.selectedComponent = componentMap[selectedValue] || PoReceiveComponent;
   }
+
+  files: File[] = [];
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -53,5 +50,4 @@ export class AddStockComponent {
   removeFile(index: number) {
     this.files.splice(index, 1); // Remove the file at the specified index
   }
-
 }
