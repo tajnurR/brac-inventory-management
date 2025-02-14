@@ -20,23 +20,27 @@ import {PoReceiveComponent} from './po-receive/po-receive.component';
   styleUrls: ['./add-stock.component.css']
 })
 export class AddStockComponent {
+
+  files: File[] = [];
   pageToGo: string = '1';
-  selectedComponent: any = PoReceiveComponent;
+  selectedComponent: any = PoReceiveComponent; // Set default component
+
+  ngOnInit() {
+    this.handleAction(this.pageToGo); // Ensure '1' is selected on load
+  }
 
   handleAction(selectedValue: string) {
     this.pageToGo = selectedValue;
+    this.files = []; // Clear files when switching components
 
-    if (selectedValue === '2') {
-      // receive with other documents
-      this.selectedComponent = RodComponent;
-    } else if (selectedValue === '3') {
-      this.selectedComponent = GiftComponent;
-    } else if (selectedValue === '1') {
-      this.selectedComponent = PoReceiveComponent;
-    }
+    const componentMap = {
+      '1': PoReceiveComponent,
+      '2': RodComponent,
+      '3': GiftComponent
+    };
+
+    this.selectedComponent = componentMap[selectedValue] || PoReceiveComponent;
   }
-
-  files: File[] = [];
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -49,4 +53,5 @@ export class AddStockComponent {
   removeFile(index: number) {
     this.files.splice(index, 1); // Remove the file at the specified index
   }
+
 }
