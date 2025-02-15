@@ -69,7 +69,8 @@
               "buildTarget": "brac-inventory-management:build:production"
             },
             "development": {
-              "buildTarget": "brac-inventory-management:build:development"
+              "buildTarget": "brac-inventory-management:build:development",
+              "hmr": true
             }
           },
           "defaultConfiguration": "development"
