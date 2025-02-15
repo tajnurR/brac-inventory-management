@@ -1,19 +1,41 @@
 <!-- header.component.html -->
 <header class="bg-white shadow-md w-full h-12 p-4 flex justify-between items-center pl-72">
-<!--  <h1 class="text-lg font-semibold">PO List</h1>-->
-<!--  <div class="flex items-center space-x-6">-->
+  <!--  <h1 class="text-lg font-semibold">PO List</h1>-->
+  <!--  <div class="flex items-center space-x-6">-->
   <div class="flex items-center space-x-4 ml-auto">
-    <button class="relative">
+    <button (click)="openPopUp()" class="relative cursor-pointer">
       <span class="absolute top-1 right-1 bg-red-500 text-white text-xs rounded-full w-2 h-2"></span>
       <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14V9a6 6 0 10-12 0v5c0 .386-.149.754-.405 1.05L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
       </svg>
     </button>
-    <img src="assets/profile-img.jpg" class="w-8 h-8 rounded-full" alt="User">
-<!--    <button>-->
-<!--      <i class="fa-solid fa-bars"></i>-->
-<!--    </button>-->
+    <!-- Profile Button -->
+    <div class="relative">
+      <button (click)="toggleDropdown()" class="focus:outline-none">
+        <img src="assets/profile-img.jpg" class="w-8 h-8 rounded-full cursor-pointer" alt="User">
+      </button>
+
+      <!-- Dropdown Menu -->
+      <div *ngIf="isDropdownOpen" class="absolute right-0 z-20 mt-3 w-48 bg-white rounded-lg shadow-lg">
+        <ul class="py-2">
+          <li>
+            <a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Profile</a>
+          </li>
+          <li>
+            <button (click)="logout()" class="w-full text-left block px-4 py-2 text-red-600 hover:bg-gray-100">
+              Logout
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--    <img src="assets/profile-img.jpg" class="w-8 h-8 rounded-full" alt="User">-->
+    <!--&lt;!&ndash;    <button>&ndash;&gt;-->
+    <!--&lt;!&ndash;      <i class="fa-solid fa-bars"></i>&ndash;&gt;-->
+    <!--&lt;!&ndash;    </button>&ndash;&gt;-->
+
+    <!--    <button (click)="logout()" class="w-full text-left block px-4 py-2 text-red-600 hover:bg-gray-100">-->
+    <!--      Logout-->
+    <!--    </button>-->
   </div>
 </header>
-
-

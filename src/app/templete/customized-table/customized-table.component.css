@@ -1,0 +1,112 @@
+.in-custom-main{
+  border: 1px solid white;
+  border-radius: 10px;
+  padding-bottom: 5%;
+}
+.iv_custom_row{
+  background-color: white;
+  padding: 2px;
+}
+
+.iv_custom_head {
+  background-color: rgb(249, 249, 249);
+  border-bottom: solid 2px rgb(228, 231, 236); /* Change the color */
+  border-top: solid 2px rgb(228, 231, 236);
+  color: rgb(121, 125, 132);
+  text-align: left;
+}
+
+.iv_custom_row_sl{
+  /*text-align: center;*/
+  width: 5px;
+}
+
+.iv_custom_row {
+  border-bottom: solid 2px rgb(228, 231, 236) ;
+  padding-left: 15px;
+}
+.custom-input{
+  color: #999999;
+}
+.custom-input-field{
+  border: solid 2px rgb(228, 231, 236) ;
+  border-radius: 5px;
+  width: 50%;
+  min-height: 40px;
+  max-height: 60px;
+  height: 80%;
+  margin: 1%;
+  padding-left: 10px;
+}
+
+.custom-input-field:focus {
+  border-color: rgb(188, 188, 188);
+  outline: none;
+}
+
+::ng-deep .mat-mdc-paginator-page-size-label{
+  display: none;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.custom-input-div-right{
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+  }
+}
+
+
+
+.dropdown-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.search-bar-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  /*margin-top: 10px;*/
+  padding-left: 20px;
+}
+
+.search-input {
+  padding: 0.5rem;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  padding: 0.5rem 1rem;
+  margin-left: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}

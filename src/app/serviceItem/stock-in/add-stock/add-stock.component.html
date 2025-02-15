@@ -1,0 +1,76 @@
+<div class="bg-grey">
+  <!-- Header with Back Button -->
+  <div class="flex items-center space-x-2 mb-5">
+    <button onclick="history.back()" class="flex items-center px-4 py-2  text-black rounded-lg hover:bg-gray-600 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+    <h2 class="text-xl font-semibold">Add New Stock</h2>
+  </div>
+  <div class="p-2 w-full">
+    <p class="text-lg font-semibold mb-2">Stock In Type:</p>
+
+    <mat-radio-group [(ngModel)]="pageToGo" (change)="handleAction($event.value)" class="grid grid-cols-3 gap-2 p-2">
+      <mat-radio-button value="1">PO Receive</mat-radio-button>
+      <mat-radio-button value="2">Receive with other Documents</mat-radio-button>
+      <mat-radio-button value="3">Gift</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <!-- Conditionally Load Component -->
+  <div *ngIf="selectedComponent" class="w-full h-auto mt-4 border-0 rounded">
+    <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+  </div>
+
+
+  <div class="bg-white rounded-xl shadow mt-3 mb-3">
+    <div class="m-4">
+      <div>
+        <label for="remarks" class="input-level mt-2">Upload Files</label>
+        <div class="flex items-center justify-start pl-1 pt-4 w-100">
+          <label for="dropzone-file" class="flex flex-col items-center justify-center pl-4 pr-10 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:bg-gray-100">
+            <div class="flex items-center justify-center space-x-2 p-2">
+              <i class="material-icons text-gray-900">download</i>
+              <p class="mb-2 text-lg text-gray-500 mt-2">Drag and Drop or click to choose file</p>
+            </div>
+          </label>
+        </div>
+        <div>
+          <input id="dropzone-file" class="p-2 m-2" hidden="hidden" type="file" multiple (change)="onFileSelected($event)"/>
+        </div>
+        <div class="m-2">
+          <div *ngFor="let file of files; let i = index"
+               class="text-gray-700 border-2 rounded flex justify-between items-center p-2 mb-2"
+               [ngStyle]="{'width': file.name.length * 10 + 'px'}">
+
+            <span class="truncate">{{ file.name }}</span>
+
+            <button (click)="removeFile(i)" class="text-black text-xl hover:text-red-700 cursor-pointer">
+              ×
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- Remarks -->
+      <div class="flex sm:flex-row sm:space-x-6 lg:space-x-6 pb-4">
+        <div class="flex-1 mb-4 sm:mb-0 sm:col-span-2">
+          <label for="remarks" class="input-level">Remarks</label>
+          <textarea id="remarks" class=" mt-2 block border-2 p-4 w-100 h-50 rounded-md border-gray-300 shadow-lg" rows="3" placeholder="Write comment about the item..."></textarea>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <!-- Link to Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</div>
+<div class="flex justify-between items-center pl-4 bg-white mt-5 mb-0 ">
+  <button class="bg-pink-300 p-4 rounded-lg cursor-pointer hover:bg-pink-400">Save as Draft</button>
+  <div class="flex space-x-5 p-4">
+    <button class="shadow-lg rounded p-4 bg-white cursor-pointer hover:bg-gray-200">Cancel</button>
+    <button class="custom-button-global p-4 cursor-pointer hover:bg-blue-500 hover:bg-black">Next</button>
+  </div>
+</div>

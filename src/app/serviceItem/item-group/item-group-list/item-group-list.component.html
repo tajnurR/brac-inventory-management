@@ -1,12 +1,12 @@
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-4 items-center">
   <h2 class="page-header" >Item Group List</h2>
   <div class="example-button-row">
-    <button mat-stroked-button class="float-right mr-5 custom-button " [routerLink]="'/add-item-group'">
+    <button mat-stroked-button class="float-right mr-5 custom-button-global " [routerLink]="'/add-item-group'">
       <span class="material-icons pr-2" style="font-size: 16px">{{'add'}}</span>Add Item Group</button>
   </div>
 </div>
 
-<app-table-with-filter [columns]="tableColumns" [data]="tableData"></app-table-with-filter>
+<app-table-with-filter [columns]="tableColumns" [data]="tableData" [searchBox] = true></app-table-with-filter>
 <router-outlet/>
 
 <router-outlet/>

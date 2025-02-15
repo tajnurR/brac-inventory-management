@@ -5,7 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .dropDown{
   @apply
-  w-90 h-12 border
+  w-80 h-12 border
   border-gray-300
   rounded-md
   py-2 px-3
@@ -25,7 +25,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   mb-3
   block
   p-2
-  w-90
+  lg:w-80
   h-12 rounded-md border-gray-300 shadow-md
   border-1
 }
@@ -37,11 +37,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .remarks{
   @apply
-  mt-2 block p-4 w-90 rounded-md border-gray-300 shadow-lg
+  mt-2 block p-4 w-80 rounded-md border-gray-300 shadow-lg
 }
 
-.submitButton{
+.custom-button-global {
+  border-radius: 4px !important;
+  background-color: deeppink !important; /* Change from black to pink */
+  color: white !important;
+  font-size: 16px !important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.custom-button-global:hover {
+  background-color: #e60078; /* Pink shade on hover */
+  cursor: pointer !important;
+}
+
+.cancel-button{
   @apply
-  bg-black text-white px-4 py-2 rounded hover:bg-gray-600
+  cursor-pointer bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600
 }
 
