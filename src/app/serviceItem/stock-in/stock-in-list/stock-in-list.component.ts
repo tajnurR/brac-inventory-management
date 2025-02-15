@@ -10,8 +10,7 @@ import {TableWithFilterComponent} from '../../../templete/table-with-filter/tabl
     MatButton,
     RouterOutlet,
     RouterLink,
-    CustomizedTableComponent,
-    TableWithFilterComponent
+    CustomizedTableComponent
   ],
   templateUrl: './stock-in-list.component.html',
   styleUrl: './stock-in-list.component.css'
