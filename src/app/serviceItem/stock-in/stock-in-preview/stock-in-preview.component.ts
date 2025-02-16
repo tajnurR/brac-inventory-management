@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, RouterOutlet} from '@angular/router';
 import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-stock-in-preview',
   imports: [
-    NgIf
+    NgIf,
+    RouterOutlet
   ],
   templateUrl: './stock-in-preview.component.html',
   styleUrl: './stock-in-preview.component.css'
@@ -18,11 +19,9 @@ export class StockInPreviewComponent {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       if (params['id']) {
-        this.id = params['id'];  // Get the 'id' query parameter
+        this.id = params['id'];
         console.log('Received ID:', this.id);
       }
     });
   }
-
-
 }

@@ -50,6 +50,17 @@ export class CustomizedTableComponent {
   }
   onRowClick(row: any) {
     console.log(row.sl);
-    this.router.navigate(['/stock-in-preview'], { queryParams: { id: row.sl } });
+    this.router.navigate([this.routeComponent], { queryParams: { id: row.item } });
+  }
+
+  getStatusClass(status: string): string {
+    switch (status) {
+      case 'Approved': return 'approved';
+      case 'Approval Pending': return 'pending';
+      case 'QC Pending': return 'qc-pending';
+      case 'Reject': return 'rejected';
+      case 'Send Back': return 'send-back';
+      default: return '';
+    }
   }
 }

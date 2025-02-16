@@ -5,6 +5,6 @@
       <span class="material-icons pr-2" style="font-size: 16px">{{'add'}}</span>Add Stock</button>
   </div>
 </div>
-<app-customized-table [columns]="tableColumns" [data]="tableData" ></app-customized-table>
+<app-customized-table [columns]="tableColumns" [data]="tableData" [routeComponent]="'/stock-in-preview'"></app-customized-table>
 <router-outlet/>
 

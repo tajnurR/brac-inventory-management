@@ -46,8 +46,8 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="iv_custom_head">
             {{ column.label }}
           </th>
-          <td mat-cell *matCellDef="let row" class="iv_custom_row">
-            {{ row[column.key] }}
+          <td mat-cell class="iv_custom_row" *matCellDef="let row" >
+            <span class="status-badge" [ngClass]="getStatusClass(row[column.key])"> {{ row[column.key] }} </span>
           </td>
         </ng-container>
 

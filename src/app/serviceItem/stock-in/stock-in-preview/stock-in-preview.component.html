@@ -1,5 +1,71 @@
-<div *ngIf="id">
-  <p>Clicked Row ID: {{ id }}</p>
-</div>
+<main class="mt-2 p-2">
+    <!--  page header-->
+    <div class="flex justify-between">
+        <div class="flex justify-self-start p-1 mb-4">
+            <div class="flex space-x-4 items-center mb-2 mt-2">
+                <div>
+                    <button onclick="history.back()" class="flex items-center space-x-1 px-4 py-1 text-black rounded-lg hover:bg-gray-600 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+                </div>
+                <h2  *ngIf="id" class="text-xl font-medium">Transaction ID: <span class="text-xl font-bold">TRNI-{{ id }}</span></h2>
+                <button class="bg-green-900 text-white pl-2 pr-2 pt-0.5 pb-0.5 rounded-sm">Received</button>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="bg-white border-1 p-2 flex items-center rounded hover:bg-gray-300">
+                Print
+                <span class="material-symbols-outlined ml-2">print</span>
+            </button>
+            <select class="TakeActionDropDown mt-2 w-full ">
+                <option value="0">Take Action</option>
+                <option value="1">Edit</option>
+                <option value="2">QC</option>
+                <option value="3">Deviation</option>
+            </select>
+        </div>
+    </div>
+    <!--  Basic Information-->
+    <div>
+        <div class="bg-white shadow-md rounded-lg p-4 mt-5 mb-5">
+            <h1 class="text-xl font-medium ">Basic Information</h1>
+            <div class="grid grid-cols-2 gap-4 md:grid-cols-5">
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Type</p>
+                    <p>PO Receive</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">PO No.</p>
+                    <p>PO-125163</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Challan No.</p>
+                    <p>125163</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Challan Date</p>
+                    <p>21-10-2023</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Vendor Name</p>
+                    <p>Khan ERP[1351]</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Receive By</p>
+                    <p>Md. Mamun [4040]</p>
+                </div>
+                <div class="p-2  rounded-lg">
+                    <p class="font-medium text-gray-400">Received Date</p>
+                    <p>21-10-2023</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<router-outlet/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=print" />
 
 
