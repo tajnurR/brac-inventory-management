@@ -48,6 +48,6 @@ export class AddStockComponent {
   }
 
   removeFile(index: number) {
-    this.files.splice(index, 1); // Remove the file at the specified index
+    this.files.splice(index, 1);
   }
 }
