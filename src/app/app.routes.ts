@@ -18,6 +18,7 @@ import {StockHistoryListComponent} from './serviceItem/stock-history/stock-histo
 import {ActivityLogListComponent} from './serviceItem/activity-log/activity-log-list/activity-log-list.component';
 import {StockInListComponent} from './serviceItem/stock-in/stock-in-list/stock-in-list.component';
 import {AddStockComponent} from './serviceItem/stock-in/add-stock/add-stock.component';
+import {StockInPreviewComponent} from './serviceItem/stock-in/stock-in-preview/stock-in-preview.component';
 
 
 export const routes: Routes = [
@@ -83,5 +84,8 @@ export const routes: Routes = [
   },
   {
     path:'activity-log', component: ActivityLogListComponent
+  },
+  {
+    path:'stock-in-preview', component: StockInPreviewComponent
   }
 ];

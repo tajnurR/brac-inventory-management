@@ -7,6 +7,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ItemData} from '../../domains/item-data';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customized-table',
@@ -19,14 +20,15 @@ export class CustomizedTableComponent {
   options: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
   @Input() columns: { key: string, label: string }[] = [];
   @Input() data: any[] = [];
+  @Input() routeComponent: string = '';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   displayedColumns: string[] = [];
-  dataSource: MatTableDataSource<ItemData>;
+  dataSource: MatTableDataSource<any>;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.displayedColumns = this.columns.map(col => col.key);
@@ -45,5 +47,9 @@ export class CustomizedTableComponent {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  onRowClick(row: any) {
+    console.log(row.sl);
+    this.router.navigate(['/stock-in-preview'], { queryParams: { id: row.sl } });
   }
 }

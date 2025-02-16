@@ -1,7 +1,7 @@
 <div class="mx-auto p-6 bg-white shadow-md rounded-lg">
   <h2 class="text-xl font-semibold mb-6">Basic Information</h2>
 
-  <div class="flex justify-start space-x-20 items-start">
+  <div class="flex justify-between space-x-10 items-center">
     <!-- Vendor Name -->
     <div>
       <label class="input-level">Organization Name</label>
@@ -22,9 +22,9 @@
         <!-- Add more options dynamically -->
       </select>
     </div>
-    <div>
-      <label class="input-level mb-3">Receive Date.</label>
-      <mat-form-field class=" w-[125%] h-17">
+    <div class="date-picker-container">
+      <label class="input-level mb-3">Receive Date</label>
+      <mat-form-field class="date-picker h-17 w-[320px]">
         <mat-label>Select a date</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
