@@ -10,7 +10,7 @@
                         </svg>
                     </button>
                 </div>
-                <h2  *ngIf="id" class="text-xl font-medium">Transaction ID: <span class="text-xl font-bold">TRNI-{{ id }}</span></h2>
+                <h2  *ngIf="id" class="text-xl font-medium">Transaction ID: <span class="text-xl font-bold">{{ id }}</span></h2>
                 <button class="bg-green-900 text-white pl-2 pr-2 pt-0.5 pb-0.5 rounded-sm">Received</button>
             </div>
         </div>
@@ -64,8 +64,21 @@
 
         </div>
     </div>
+    <div class="bg-white shadow rounded-xl p-4">
+
+        <div class="mb-4">
+            <h1>Attached File(s)</h1>
+            <div class="flex space-x-2">
+                <h1 class="border-1 p-2 w-30 mt-2 rounded">Image1.jpg</h1>
+                <h1 class="border-1 p-2 w-30 mt-2 rounded">Image2.jpg</h1>
+            </div>
+        </div>
+        <div>
+            <h1>Remarks</h1>
+            <p>Items in storage were found to be in good condition</p>
+        </div>
+    </div>
 </main>
 <router-outlet/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=print" />
-
 

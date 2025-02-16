@@ -80,8 +80,8 @@ export class CoreApiServiceService {
         id: 5,
         label: "Stock Out",
         icon: "logout",
-        path: "/stock-out",
-        componentName: "",
+        path: "/stock-out-list",
+        componentName: "StockOutListComponent",
         parentMenuId: null,
         status: true
       },

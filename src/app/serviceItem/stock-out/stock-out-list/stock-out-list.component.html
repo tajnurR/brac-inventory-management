@@ -1,8 +1,8 @@
 <div class="grid grid-cols-2 gap-4 items-center">
-  <h2 class="page-header" >Stock in List</h2>
+  <h2 class="page-header" >Stock Out List</h2>
   <div class="example-button-row">
     <button mat-stroked-button class="float-right mr-5 custom-button-global " [routerLink]="'/add-stock'">
-      <span class="material-icons pr-2" style="font-size: 16px">{{'add'}}</span>Add Stock</button>
+      <span class="material-icons pr-2" style="font-size: 16px">{{'add'}}</span>Stock Out </button>
   </div>
 </div>
 <app-customized-table [columns]="tableColumns" [data]="tableData" [routeComponent]="'/stock-details-preview'"></app-customized-table>

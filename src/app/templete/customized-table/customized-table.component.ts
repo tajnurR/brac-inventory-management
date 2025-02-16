@@ -4,7 +4,6 @@ import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {ItemData} from '../../domains/item-data';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -49,8 +48,7 @@ export class CustomizedTableComponent {
     }
   }
   onRowClick(row: any) {
-    console.log(row.sl);
-    this.router.navigate([this.routeComponent], { queryParams: { id: row.item } });
+    this.router.navigate([this.routeComponent], { queryParams: { id: row.tarnId } });
   }
 
   getStatusClass(status: string): string {
@@ -60,6 +58,7 @@ export class CustomizedTableComponent {
       case 'QC Pending': return 'qc-pending';
       case 'Reject': return 'rejected';
       case 'Send Back': return 'send-back';
+      case 'Draft': return 'draft';
       default: return '';
     }
   }

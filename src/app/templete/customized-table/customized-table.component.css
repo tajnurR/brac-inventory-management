@@ -23,7 +23,7 @@
 
 .iv_custom_row {
   border-bottom: solid 2px rgb(228, 231, 236) ;
-  padding-left: 15px;
+  padding-left: 6px;
 }
 .custom-input{
   color: #999999;
@@ -148,5 +148,9 @@
 .send-back {
   background-color: #fffaf0;
   color: #ff6700;
+}
+
+.draft{
+  background-color: #cccccc;
 }
 

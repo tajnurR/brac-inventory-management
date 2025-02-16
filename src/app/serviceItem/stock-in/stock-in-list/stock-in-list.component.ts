@@ -18,24 +18,28 @@ import {TableWithFilterComponent} from '../../../templete/table-with-filter/tabl
 export class StockInListComponent {
   tableColumns = [
     { key: 'sl', label: 'SL' },
-    { key: 'item', label: 'Item' },
-    { key: 'sku', label: 'SKU' },
-    { key: 'uom', label: 'UoM' },
-    { key: 'category', label: 'Category' },
+    { key: 'tarnId', label: 'Transaction ID' },
+    { key: 'type', label: 'Type' },
+    { key: 'challanNo', label: 'Challan No.' },
+    { key: 'vendorName', label: 'Vendor Name' },
+    { key: 'department', label: 'Department Name' },
+    { key: 'rQTY', label: 'Received QTY' },
     { key: 'status', label: 'Status' },
-    { key: 'specification', label: 'Specification' },
+    { key: 'totalAmount', label: 'Total Amount' },
     { key: 'created_on', label: 'Created On' }
   ];
 
   tableData = Array.from({ length: 100 }, (_, i) => ({
-    sl: (i + 1).toString(),
-    item: `TRNI- ${i + 1}`,
-    sku: `SKU-${1000 + i}`,
-    uom: ['pcs', 'kg', 'litre', 'box'][i % 4],
-    category: ['Electronics', 'Groceries', 'Clothing', 'Furniture'][i % 4],
-    status: ['Approved', 'Reject', 'Approval Pending', 'QC Pending', 'Send Back'][i % 5],
-    specification: `Specification details for item ${i + 1}`,
-    created_on: new Date(2023, i % 12, (i % 28) + 1).toISOString(),
+    sl: (i + 1).toString(), // SL (Serial Number)
+    tarnId: `TRNI-${1000 + i}`, // Transaction ID
+    type: ['PO Receive', 'Gift', 'Receive with Other Documents'][i % 4], // Type
+    challanNo: `CH-${2000 + i}`, // Challan No.
+    vendorName: `Vendor ${i + 1}`, // Vendor Name
+    department: ['Finance', 'Procurement', 'Warehouse', 'Operations'][i % 4], // Department Name
+    rQTY: Math.floor(Math.random() * 100) + 1, // Received QTY (Random value between 1 and 100)
+    status: ['Approved', 'Rejected', 'Pending', 'QC Pending', 'Send Back'][i % 5], // Status
+    totalAmount: (Math.random() * 1000).toFixed(2), // Total Amount (Random value between 0 and 1000)
+    created_on: new Date(2023, i % 12, (i % 28) + 1).toISOString(), // Created On
   }));
 
 }
