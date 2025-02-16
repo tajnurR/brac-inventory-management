@@ -27,5 +27,5 @@ aside {
 }
 
 .spin-logo {
-  animation: spin 3000s linear infinite; /* 2s duration, linear timing, infinite loop */
+  animation: spin 5s linear infinite; /* 2s duration, linear timing, infinite loop */
 }
