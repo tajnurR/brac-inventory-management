@@ -8,7 +8,7 @@
   [ngClass]="{ 'w-64': isExpanded, 'w-20': !isExpanded }">
 
   <div class="flex items-center space-x-3 p-5">
-    <img src="assets/brac_logo.png" alt="Logo" class="w-8 h-8"/>
+    <img src="assets/brac_logo.png" alt="Logo" class="w-8 h-8 animate-spin"/>
     <span class="text-xl font-bold" *ngIf="isPinned() || isHovered()">Inventory</span>
   </div>
 

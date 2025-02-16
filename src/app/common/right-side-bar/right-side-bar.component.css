@@ -17,4 +17,15 @@ aside {
   -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
   scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
+.spin-logo {
+  animation: spin 3000s linear infinite; /* 2s duration, linear timing, infinite loop */
+}
