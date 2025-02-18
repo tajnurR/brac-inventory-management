@@ -105,24 +105,16 @@ export class CoreApiServiceService {
       },
       {
         id: 8,
-        label: "Category",
-        icon: "inbox",
-        path: "setup/category-list",
-        componentName: "CategoryListComponent",
-        parentMenuId: 7,
-        status: true
-      },
-      {
-        id: 9,
         label: "Item",
         icon: "category",
         path: "/item-add",
         componentName: "ItemAddComponent",
         parentMenuId: 7,
         status: true
+
       },
       {
-        id: 10,
+        id: 9,
         label: "Item Group",
         icon: "list",
         path: "setup/item-group-list",
@@ -131,11 +123,20 @@ export class CoreApiServiceService {
         status: true
       },
       {
-        id: 11,
+        id: 10,
         label: "UoM",
         icon: "ac_unit",
         path: "setup/uom-list",
         componentName: "UomListComponent",
+        parentMenuId: 7,
+        status: true
+      },
+      {
+        id: 11,
+        label: "Category",
+        icon: "inbox",
+        path: "setup/category-list",
+        componentName: "CategoryListComponent",
         parentMenuId: 7,
         status: true
       },

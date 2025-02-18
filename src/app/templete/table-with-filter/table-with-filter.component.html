@@ -27,8 +27,44 @@
       </table>
     </div>
 
-    <mat-paginator class="custom-pagination" [pageSizeOptions]="[20, 50, 100]" aria-label="Select page"></mat-paginator>
+<!--    <mat-paginator class="custom-pagination" [pageSizeOptions]="[20, 50, 100]" aria-label="Select page"></mat-paginator>-->
 <!--    <mat-paginator [pageSizeOptions]="[20, 50, 100]" aria-label="Select page of users"></mat-paginator>-->
+
+    <div class="flex justify-between items-center p-4 bg-white rounded-lg">
+      <!-- Dropdown for items per page -->
+      <div class="relative">
+        <select class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+          <option value="20">20 Per Page</option>
+          <option value="20" >50 Per Page</option>
+          <option value="20" >100 Per Page</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+          <mat-icon class="text-gray-500">arrow_drop_down</mat-icon>
+        </div>
+      </div>
+
+      <!-- Pagination controls -->
+      <div class="flex items-center space-x-0.5">
+        <!-- First page button -->
+        <button class="p-1 rounded hover:bg-gray-200">
+          <mat-icon class="text-gray-500">first_page</mat-icon>
+        </button>
+        <!-- Previous page button -->
+        <button class="p-1 rounded hover:bg-gray-200">
+          <mat-icon class="text-gray-500">chevron_left</mat-icon>
+        </button>
+        <!-- Current page display -->
+        <span class="text-sm text-gray-700 p-1">Page 2 of 10</span>
+        <!-- Next page button -->
+        <button class="p-1 rounded hover:bg-gray-200">
+          <mat-icon class="text-gray-500">chevron_right</mat-icon>
+        </button>
+        <!-- Last page button -->
+        <button class="p-1 rounded hover:bg-gray-200">
+          <mat-icon class="text-gray-500">last_page</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
 
 </div>

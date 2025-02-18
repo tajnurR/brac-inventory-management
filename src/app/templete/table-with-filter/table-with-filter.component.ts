@@ -5,11 +5,12 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import {MatIcon} from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-table-with-filter',
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, CommonModule],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule, CommonModule, MatIcon],
   templateUrl: './table-with-filter.component.html',
   styleUrl: './table-with-filter.component.css'
 })
