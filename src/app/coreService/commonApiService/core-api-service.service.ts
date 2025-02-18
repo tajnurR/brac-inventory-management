@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 // import {HttpClient} from '@angular/common/http';
 import {map, Observable} from 'rxjs';
 import {NavModel} from '../../domains/nav-model';
-import {ItemAddComponent} from '../../serviceItem/item/item-add/item-add.component';
+import {ItemAddComponent} from '../../serviceItem/master-setup/item/item-add/item-add.component';
 
 @Injectable({
   providedIn: 'root'

@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
-import {MatButton} from '@angular/material/button';
-import {TableWithFilterComponent} from '../../../templete/table-with-filter/table-with-filter.component';
+import {MatButton} from "@angular/material/button";
+import {RouterLink, RouterOutlet} from "@angular/router";
+import {TableWithFilterComponent} from "../../../../templete/table-with-filter/table-with-filter.component";
 
 @Component({
-  selector: 'app-uom-list',
+  selector: 'app-category-list',
   imports: [
-    RouterOutlet,
     MatButton,
+    RouterOutlet,
     TableWithFilterComponent,
     RouterLink
   ],
-  templateUrl: './uom-list.component.html',
-  styleUrl: './uom-list.component.css'
+  templateUrl: './category-list.component.html',
+  styleUrl: './category-list.component.css'
 })
-export class UomListComponent {
+export class CategoryListComponent {
   tableColumns = [
     { key: 'sl', label: 'SL' },
     { key: 'item', label: 'Item' },
@@ -22,7 +22,7 @@ export class UomListComponent {
     { key: 'uom', label: 'UoM' },
     { key: 'category', label: 'Category' },
     { key: 'specification', label: 'Specification' },
-    { key: 'created_on', label: 'Created On' },
+    { key: 'created_on', label: 'Created On' }
   ];
 
   tableData = Array.from({ length: 100 }, (_, i) => ({
@@ -34,5 +34,4 @@ export class UomListComponent {
     specification: `Specification details for item ${i + 1}`,
     created_on: new Date(2023, i % 12, (i % 28) + 1).toISOString(),
   }));
-
 }
