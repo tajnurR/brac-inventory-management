@@ -25,7 +25,7 @@ export class CoreApiServiceService {
         id: 1,
         label: "Dashboard",
         path: "/dashboard",
-        icon: "home",
+        icon: "dashboard",
         componentName: "HomeComponent",
         parentMenuId: null,
         status: true

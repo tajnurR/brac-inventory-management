@@ -48,7 +48,6 @@ export class RightSideBarComponent implements OnInit {
     }
   }
 
-
   toggleSubMenu(id: any) { debugger
     this.expandedIndex = this.expandedIndex === id ? null : id;
 

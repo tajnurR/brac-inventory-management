@@ -46,5 +46,19 @@ export class TableWithFilterComponent {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  getStatusClass(status: string): string {
+    switch (status) {
+      case 'Approved': return 'approved';
+      case 'Approval Pending': return 'pending';
+      case 'QC Pending': return 'qc-pending';
+      case 'Reject': return 'rejected';
+      case 'Send Back': return 'send-back';
+      case 'Draft': return 'draft';
+      case 'Active': return 'active';
+      case 'Inactive': return 'inactive';
+      default: return '';
+    }
+  }
 }
 

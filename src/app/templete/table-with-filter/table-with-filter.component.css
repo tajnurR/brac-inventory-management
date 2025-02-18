@@ -59,6 +59,15 @@
     display: block;
   }
 }
+.inactive{
+  background-color: #ffecec;
+  color: #d9534f;
+}
+
+.active{
+  background-color: #eef7ff;
+  color: #0073e6;
+}
 
 
 

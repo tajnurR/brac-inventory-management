@@ -1,0 +1,92 @@
+<main class="">
+  <div class="p-6 bg-white shadow-lg rounded-lg">
+    <!-- Header with Back Button -->
+    <div class="flex items-center bg-white space-x-2 mb-5">
+      <button onclick="history.back()" class="flex items-center px-4 py-2 bg-white text-black rounded-lg hover:bg-gray-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" d="M11.707 4.293a1 1 0 0 1 0 1.414L6.414 11H20a1 1 0 1 1 0 2H6.414l5.293 5.293a1 1 0 0 1-1.414 1.414l-7-7a1 1 0 0 1 0-1.414l7-7a1 1 0 0 1 1.414 0z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <h2 class="text-xl font-semibold">Create Role</h2>
+    </div>
+    <mat-stepper [linear]="!isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Basic Info</ng-template>
+          <div class="ml-100">
+            <div class="flex-1 mb-4 sm:mb-0">
+              <label for="itemName" class="input-level">Role Name</label>
+              <input id="itemName" type="text" formControlName="firstCtrl" required class="input-field w-80" placeholder="Type Role Name">
+            </div>
+            <div class="flex-1 mb-4 sm:mb-0">
+              <label for="uom" class="input-level">Status</label>
+              <select id="uom" class="dropDown mt-2 w-full">
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
+              </select>
+            </div>
+            <div class="flex-1 mb-4 sm:mb-0 sm:col-span-2">
+              <label for="remarks" class="input-level">Remarks</label>
+              <textarea id="remarks" class="remarks w-full" rows="3" placeholder="Write comment about the item..."></textarea>
+            </div>
+          </div>
+          <div class="flex justify-end space-x-2">
+            <div>
+              <button class="cancel-button cursor-pointer" (click)="stepper.reset()">Cancel</button>
+            </div>
+            <div>
+              <button class="bg-pink-500 text-white px-4 py-2 rounded cursor-pointer" matStepperNext>Next</button>
+            </div>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Role Access">
+        <form [formGroup]="secondFormGroup">
+          <div class="flex justify-evenly space-x-5">
+            <h1>Roles</h1>
+            <h1>Permission</h1>
+          </div>
+          <mat-divider class="items-center"></mat-divider>
+          <div class="mt-4 mb-4">
+            <div class="flex justify-evenly">
+              <div>
+                <mat-checkbox>Report</mat-checkbox>
+              </div>
+              <div>
+                <section class="example-section">
+  <span class="example-list-section">
+    <mat-checkbox
+      class="example-margin"
+      [checked]="task().completed"
+      [indeterminate]="partiallyComplete()"
+      (change)="update($event.checked)"
+    >
+      {{task().name}}
+    </mat-checkbox>
+  </span>
+                  <span class="example-list-section">
+    <ul>
+      @for (subtask of task().subtasks; track subtask; let i = $index) {
+        <li>
+          <mat-checkbox [checked]="subtask.completed" (change)="update($event.checked, i)">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      }
+    </ul>
+  </span>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end">
+          <div class="space-x-2">
+            <button class=" border-1 px-3 py-1 rounded cursor-pointer" matStepperPrevious>Back</button>
+            <button class="custom-button-global p-4 cursor-pointer" matStepperNext>Submit</button>
+          </div>
+          </div>
+        </form>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</main>

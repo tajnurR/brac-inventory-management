@@ -48,7 +48,9 @@ export class CustomizedTableComponent {
     }
   }
   onRowClick(row: any) {
-    this.router.navigate([this.routeComponent], { queryParams: { id: row.tarnId } });
+    if (this.routeComponent) {
+      this.router.navigate([this.routeComponent], { queryParams: { id: row.tarnId } });
+    }
   }
 
   getStatusClass(status: string): string {
@@ -59,6 +61,8 @@ export class CustomizedTableComponent {
       case 'Reject': return 'rejected';
       case 'Send Back': return 'send-back';
       case 'Draft': return 'draft';
+      case 'Active': return 'active';
+      case 'Inactive': return 'inactive';
       default: return '';
     }
   }

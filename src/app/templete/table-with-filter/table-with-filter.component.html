@@ -8,12 +8,13 @@
       <table mat-table [dataSource]="dataSource" matSort class="w-full border border-gray-300 ">
 
         <!-- Dynamic Column Definitions -->
+        <!-- Dynamic Column Definitions -->
         <ng-container *ngFor="let column of columns" [matColumnDef]="column.key">
           <th mat-header-cell *matHeaderCellDef mat-sort-header class="iv_custom_head">
             {{ column.label }}
           </th>
-          <td mat-cell class="iv_custom_row" *matCellDef="let row">
-            {{ row[column.key] }}
+          <td mat-cell class="iv_custom_row" *matCellDef="let row" >
+            <span class="status-badge" [ngClass]="getStatusClass(row[column.key])"> {{ row[column.key] }} </span>
           </td>
         </ng-container>
 

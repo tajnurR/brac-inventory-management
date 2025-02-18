@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import {PurchaseOrderComponent} from './serviceItem/purchase-order/purchase-order.component';
-import {HomeComponent} from './serviceItem/home/home.component';
+import {HomeComponent} from './serviceItem/dashboard/home.component';
 import {ItemAddComponent} from './serviceItem/master-setup/item/item-add/item-add.component';
 import {AddItemComponent} from './serviceItem/master-setup/item/add-item-form/add-item.component';
-import {UserDetailsComponent} from './serviceItem/user/user-details/user-details.component';
+import {UserDetailsComponent} from './serviceItem/UAM/user/user-details/user-details.component';
 import {CategoryListComponent} from './serviceItem/master-setup/category/category-list/category-list.component';
 import {AddCategoryComponent} from './serviceItem/master-setup/category/add-category/add-category.component';
 import {OrganizationListComponent} from './serviceItem/master-setup/organization/organization-list/organization-list.component';
@@ -12,8 +12,8 @@ import {ItemGroupListComponent} from './serviceItem/master-setup/item-group/item
 import {AddItemGroupComponent} from './serviceItem/master-setup/item-group/add-item-group/add-item-group.component';
 import {UomListComponent} from './serviceItem/master-setup/uom/uom-list/uom-list.component';
 import {AddUomComponent} from './serviceItem/master-setup/uom/add-uom/add-uom.component';
-import {RoleUAMListComponent} from './serviceItem/roleUAM/role-uam-list/role-uam-list.component';
-import {AddRoleComponent} from './serviceItem/roleUAM/add-role/add-role.component';
+import {RoleUAMListComponent} from './serviceItem/UAM/role/role-uam-list/role-uam-list.component';
+import {AddRoleComponent} from './serviceItem/UAM/role/add-role/add-role.component';
 import {StockHistoryListComponent} from './serviceItem/stock-history/stock-history-list/stock-history-list.component';
 import {ActivityLogListComponent} from './serviceItem/activity-log/activity-log-list/activity-log-list.component';
 import {StockInListComponent} from './serviceItem/stock-in/stock-in-list/stock-in-list.component';
@@ -36,10 +36,10 @@ export const routes: Routes = [
     path: 'setup/item-add', component: ItemAddComponent,
   },
   {
-    path: 'home', component: HomeComponent,
+    path: 'dashboard', component: HomeComponent,
   },
   {
-    path: '', redirectTo: '/home', pathMatch: 'full'
+    path: '', redirectTo: '/dashboard', pathMatch: 'full'
   },
   {
     path: 'add-item-form', component: AddItemComponent
@@ -78,7 +78,7 @@ export const routes: Routes = [
     path:'uam/role-uam-list', component: RoleUAMListComponent
   },
   {
-    path:'add-role', component: AddRoleComponent
+    path:'uam/add-role', component: AddRoleComponent
   },
   {
     path:'history', component: StockHistoryListComponent

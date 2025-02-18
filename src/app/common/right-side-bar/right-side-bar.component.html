@@ -1,11 +1,9 @@
-<!-- sidebar.component.html -->
-<!--  (mouseenter)="onMouseEnter()"-->
-<!--  (mouseleave)="onMouseLeave()"-->
 <aside
   [class.w-64]="isPinned() || isHovered()"
   [class.w-20]="!isPinned() && !isHovered()"
-  class="h-screen bg-gray-900 text-white fixed transition-all duration-500 ease-in-out"
-  [ngClass]="{ 'w-64': isExpanded, 'w-20': !isExpanded }">
+  class="h-screen bg-pink-100 text-black fixed transition-all duration-500 ease-in-out"
+  [ngClass]="{ 'w-64': isExpanded, 'w-20': !isExpanded }"
+>
 
   <div class="flex items-center space-x-3 p-5">
     <img src="assets/brac_logo.png" alt="Logo" class="w-8 h-8 animate-spin"/>
@@ -18,9 +16,9 @@
         <a
           [routerLink]="item.link"
           [routerLinkActive]="navActive"
-          class="flex items-center p-2 rounded hover:bg-gray-800"
-          (click)="toggleSubMenu(i)">
-
+          class="flex items-center p-2 rounded transition-all duration-300 ease-in-out hover:bg-pink-500 hover:text-white"
+          (click)="toggleSubMenu(i)"
+        >
           @if (isPinned() || isHovered()) {
             <span class="material-icons w-6 h-6">{{ item.icon }}</span>
           } @else {
@@ -44,7 +42,8 @@
             <a
               [routerLink]="subItem.link"
               [routerLinkActive]="navActive"
-              class="flex items-center p-2 rounded hover:bg-gray-800">
+              class="flex items-center p-2 rounded transition-all duration-300 ease-in-out hover:bg-pink-500 hover:text-white"
+            >
               <span class="material-icons w-6 h-6">{{ subItem.icon }}</span>
               <span class="ml-6 whitespace-nowrap">{{ subItem.label }}</span>
             </a>
@@ -54,19 +53,15 @@
     </ul>
   </nav>
 
-  <button
-    (click)="toggleSidebar()"
-    class="absolute bottom-5 right-[8px] items-center justify-center w-12 h-12 mr-2 text-pink-100 transition-colors duration-150 bg-pink-700 rounded-full focus:shadow-outline hover:bg-pink-800"
-  >
-    <span
-      class="material-icons"
-      id="m-icon"
-      [ngStyle]="{ transform: isPinned() ? 'rotate(180deg)' : 'rotate(0deg)' }"
-    >keyboard_double_arrow_right</span
-    >
-  </button>
+<!--  <button-->
+<!--    (click)="toggleSidebar()"-->
+<!--    class="absolute bottom-5 right-[8px] items-center justify-center w-12 h-12 mr-2 text-white transition-colors duration-150 bg-pink-200 rounded-full focus:shadow-outline hover:bg-pink-300"-->
+<!--  >-->
+<!--    <span-->
+<!--      class="material-icons"-->
+<!--      id="m-icon"-->
+<!--      [ngStyle]="{ transform: isPinned() ? 'rotate(180deg)' : 'rotate(0deg)' }"-->
+<!--    >keyboard_double_arrow_right</span>-->
+<!--  </button>-->
+
 </aside>
-
-
-
-<!--<nav class="mt-5 overflow-y-auto max-h-full">-->
